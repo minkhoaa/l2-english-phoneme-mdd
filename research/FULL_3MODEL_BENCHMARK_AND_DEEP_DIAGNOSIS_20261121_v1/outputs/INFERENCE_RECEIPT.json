@@ -1,0 +1,46 @@
+{
+  "device": "cuda",
+  "elapsed_total_s": 1197.42,
+  "files": {
+    "held6_slots.parquet": {
+      "sha256": "f9d9e2fccd57376d4f3350869c8935eac9a4d175e9006576be97c55aa37aae52",
+      "bytes": 2703403
+    },
+    "held6_utterance_meta.jsonl": {
+      "sha256": "f320013f05be7c128e7093a9f5d37b1a540a2efbf955c0c2398a935e6a6b0da7",
+      "bytes": 394967
+    },
+    "spontaneous_slots.parquet": {
+      "sha256": "5d537d3e42f63895b6c2d338ce2208f2a8e264effe00b7ba9b95c760f5d715a7",
+      "bytes": 920478
+    },
+    "spontaneous_utterance_meta.jsonl": {
+      "sha256": "a8fa624d1b81a7584350ead4894b2f021e1b812117ce60d643c4f4f7a1be8a74",
+      "bytes": 90445
+    },
+    "epadb_test_slots.parquet": {
+      "sha256": "d79c6b6e624cc9b77810b84122ab4bda0bb81f596ff297cb3664a5786b9b8cb1",
+      "bytes": 2157623
+    },
+    "epadb_test_utterance_meta.jsonl": {
+      "sha256": "d6bc40fe51130e78793ab31e826f698f7f544e4b8fffaf7d730380d0279a73b4",
+      "bytes": 545997
+    },
+    "timit_core_slots.parquet": {
+      "sha256": "36c28675b0a59498595baf020c9a78355b3ce992972ce5adee0498c19f27762a",
+      "bytes": 651450
+    },
+    "timit_core_utterance_meta.jsonl": {
+      "sha256": "a5eb3b5a2826bf27ea75b57d4fb058a491030df804b29b997c2feb4efc2e70ba",
+      "bytes": 105228
+    },
+    "saa27_sm13_decomp_slots.parquet": {
+      "sha256": "3b03570d67e2dbb11de138f9537ad02435ba96cb43931443c02aea632aa842b5",
+      "bytes": 445793
+    },
+    "dev18_sm13_decomp_slots.parquet": {
+      "sha256": "af2e9dfe7c3e5fe78eb55ac2a9af06cfb87a5b68ab4959d2f79e551a879f74dd",
+      "bytes": 468624
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "checkpoint_file": "seq_mdd_v2_antishortcut_seed20261121.pt",
+  "checkpoint_sha256": "a9bb69ed5cdd49d6fa9d0b6d8c4305a43d9e9834c0e59ed64567f08c6c61cb65",
+  "architecture": "SeqMDDv2",
+  "backbone": "KoelLabs/xlsr-english-01 (frozen, 1 forward pass, layers 12,15,18,20,22,24)",
+  "trainable_params": 1441419,
+  "seed": 20261121,
+  "best_epoch": 4,
+  "locked_calibrate_thresholds": {
+    "tau_t": 0.29,
+    "tau_g": 0.825,
+    "calibration_cohort": "DEV-18 (3 spks) + EpaDB TRAIN (4 spks) + TIMIT TRAIN (60 native spks)"
+  },
+  "training_recipe": {
+    "fit_utts": 4011,
+    "fit_speakers": 375,
+    "corpora": ["L2-ARCTIC DEV-18 (15 spks)", "EpaDB TRAIN (26 spks)", "TIMIT TRAIN (400 native spks, in-utterance anti-shortcut 10% S / 3% O / 3% I)"],
+    "discrete_shortcuts_removed": true,
+    "archived_checkpoints_untouched": true
+  },
+  "verified_eval_metrics_strict_micro_f1": {
+    "epadb_test": {"strict_f1_pct": 68.29, "oracle_f1_pct": 68.62, "i_f1_pct": 43.4, "target_pr_auc": 0.806, "p50_ms": 112.1},
+    "l2a_spontaneous": {"strict_f1_pct": 63.22, "unseen_held6_slice_pct": 64.38, "oracle_f1_pct": 63.63, "p50_ms": 364.1},
+    "saa27_stella": {"strict_f1_pct": 45.39, "oracle_f1_pct": 45.91, "i_f1_pct": 23.4, "p50_ms": 1360.3},
+    "l2a_held6": {"strict_f1_pct": 65.20, "oracle_f1_pct": 65.85, "i_f1_pct": 46.8, "target_pr_auc": 0.7767, "p50_ms": 128.7},
+    "timit_core_native_fa": {"fa_per_utt": 1.63, "target_fa_per_1k": 42.83, "gap_fa_per_1k": 6.09},
+    "timit_corruption_anti_shortcut_control": {"clean_alert_pct": 2.84, "corrupt_recall_pct": 96.42, "pr_auc": 0.983, "roc_auc": 0.9934}
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "checkpoint_file": "seq_mdd_v2_1_fix1_iso_no_hwin_seed20261122.pt",
+  "checkpoint_sha256": "91dc67fe396555933057f8ae4c52283682ee62e0f5002d90470607762bf13cd6",
+  "source_run_checkpoint": "research/SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/confirm_fix1_3seed_20261121_v1/seed20261122_iso_no_hwin/control.pt",
+  "architecture": "SingleFactorV2 (iso_no_hwin: Fix #1 pure on LengthAwareV2)",
+  "architecture_module": "research/SEQ_MDD_V3_CAMPAIGN_20261121_v1/single_factor_models.py",
+  "config": {
+    "arm": "iso_no_hwin",
+    "use_utt_cmvn": false,
+    "raw_lp_layernorm": false,
+    "use_h_win": false,
+    "d_model": 192,
+    "dropout": 0.3
+  },
+  "backbone": "KoelLabs/xlsr-english-01 (frozen, 1 forward pass, layers 12,15,18,20,22,24)",
+  "trainable_params": 1384939,
+  "seed": 20261122,
+  "best_epoch": 7,
+  "selection_criterion_strictly_on_calibrate": "highest Calibrate L2 strict F1 (67.98%) and Calibrate target AP (0.8061) among 3 confirmed seeds",
+  "calibrate_selection_metrics": {
+    "cal_selection_score": 0.8878,
+    "cal_target_ap": 0.8061,
+    "cal_gap_ap": 0.5446,
+    "cal_l2_strict_f1_pct": 67.98,
+    "cal_l1_fa_per_1k": 0.79
+  },
+  "locked_calibrate_thresholds": {
+    "tau_t": 0.36,
+    "tau_g": 0.875,
+    "calibration_cohort": "v2_prompt_eos_repair_v1/splits/cal.jsonl (DEV-18 3 spks + EpaDB TRAIN 4 spks + TIMIT TRAIN 60 native spks)"
+  },
+  "training_recipe": {
+    "splits_preflight_sha256": "0b7d40c521f02bd5700cccea9d44b5e756018f2c74a85a98d832aa0bfb24335a",
+    "train_order_sha256": "8a839abf1fa4d70ba95d1a6736499a154a6211eab730d9c31bf7faa11068ffcd",
+    "fit_utts": 4011,
+    "epochs": 14,
+    "batch_size": 16,
+    "optimizer": "AdamW(lr=8e-4, weight_decay=0.02), CosineAnnealingLR(eta_min=2e-5), clip=1.0",
+    "loss": "V2 multitask weighted CE (gap_pos_weight=8.0, lambda_gap=0.6, lambda_realized=0.25, TIMIT anti-shortcut S/O/I preserved)",
+    "key_fixes_over_v2": [
+      "TIMIT MDD prompt inventory preserves AO/ZH (separated from PER fold)",
+      "Length-aware per-utterance EOS routing in GapHead (batch-size invariant)",
+      "Per-layer LayerNorm before softmax layer-mix + independent target/gap LayerNorm (utterance CMVN removed)",
+      "Well-scaled posterior encoding [exp(lp), clip(lp,-10,0)/10] + per-branch LayerNorm before concat",
+      "Balanced BiGRU residual with LayerNorm on both slot_x and BiGRU output"
+    ]
+  },
+  "verified_eval_metrics_seed20261122": {
+    "l2a_held6": {
+      "strict_f1_pct": 66.39,
+      "i_f1_pct": 61.48,
+      "target_pr_auc": 0.7874,
+      "gap_pr_auc": 0.5737
+    },
+    "epadb_test": {
+      "strict_f1_pct": 69.33,
+      "i_f1_pct": 40.97,
+      "target_pr_auc": 0.8158,
+      "gap_pr_auc": 0.3623
+    },
+    "saa27_stella": {
+      "strict_f1_pct": 45.48,
+      "i_f1_pct": 31.05,
+      "target_pr_auc": 0.4865,
+      "gap_pr_auc": 0.2186
+    },
+    "l2a_spontaneous": {
+      "strict_f1_pct": 60.98,
+      "unseen_held6_slice_pct": 62.72,
+      "target_pr_auc": 0.7787,
+      "gap_pr_auc": 0.3294
+    },
+    "timit_core_repaired_prompt": {
+      "fa_total": 123,
+      "fa_target": 120,
+      "fa_gap": 3,
+      "fa_per_utt": 0.6406,
+      "target_fa_per_1k": 18.83,
+      "gap_fa_per_1k": 0.46
+    },
+    "timit_corruption_control": {
+      "corrupt_recall_pct": 96.42,
+      "pr_auc": 0.9845,
+      "roc_auc": 0.9951
+    }
+  },
+  "paired_3seed_confirmation_mean_sd": {
+    "held6_strict_f1_pct": [
+      65.99,
+      0.31
+    ],
+    "epadb_strict_f1_pct": [
+      68.82,
+      0.52
+    ],
+    "saa27_strict_f1_pct": [
+      45.01,
+      0.7
+    ],
+    "spontaneous_strict_f1_pct": [
+      61.08,
+      0.78
+    ],
+    "timit_fa_per_utt": [
+      0.71,
+      0.141
+    ],
+    "timit_control_recall_pct": [
+      96.18,
+      0.89
+    ]
+  },
+  "archived_v2_antishortcut_untouched_sha256": "a9bb69ed5cdd49d6fa9d0b6d8c4305a43d9e9834c0e59ed64567f08c6c61cb65",
+  "scope_and_limits": "Diagnostic research checkpoint on frozen Base Koel; test_sealed remains closed; fresh short-utterance Vietnamese confirmation (EXP-6) still pending."
+}

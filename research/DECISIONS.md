@@ -1,5 +1,86 @@
 # Research decisions
 
+## 2026-11-21 — Lưu & chọn `seq_mdd_v2_1_fix1_iso_no_hwin_seed20261122.pt` làm mốc nghiên cứu frozen-Koel mới (giữ nguyên V2 gốc trong archive)
+
+Theo chỉ thị người dùng sau [xác nhận 3 seed ghép cặp `confirm_fix1_3seed_20261121_v1`](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/confirm_fix1_3seed_20261121_v1/CONFIRM_3SEED_RESULTS.json):
+- **Checkpoint nghiên cứu dẫn đầu mới:** [`research/SEQ_MDD_V3_CAMPAIGN_20261121_v1/checkpoints/seq_mdd_v2_1_fix1_iso_no_hwin_seed20261122.pt`](SEQ_MDD_V3_CAMPAIGN_20261121_v1/checkpoints/seq_mdd_v2_1_fix1_iso_no_hwin_seed20261122.pt) (SHA-256 `91dc67fe396555933057f8ae4c52283682ee62e0f5002d90470607762bf13cd6`, [CHECKPOINT_CARD.json](SEQ_MDD_V3_CAMPAIGN_20261121_v1/checkpoints/CHECKPOINT_CARD.json)), kiến trúc `SingleFactorV2 (iso_no_hwin)`, `1.390.987` params, best epoch `7`, khóa Calibrate `τt=0,36, τg=0,875` (được chọn thuần trên Calibrate: `cal_L2_strict_f1 67,98%`, `cal_tAP 0,8061`).
+- **Kết quả chẩn đoán chính:** `Held-6 66,39%` (`I F1 61,80%`), `EpaDB TEST 69,33%`, `SAA-27 45,48%` (`tAP 0,487`), `Spontaneous 60,98%` (`unseen H6 62,72%`), `TIMIT Core 0,641 FA/câu` (`120 target + 3 gap`, giảm hơn 2× so với V2 `1,302` cùng prompt sửa), `Control Recall 96,42%`.
+- **Bảo toàn lịch sử & giới hạn:** Giữ nguyên `seq_mdd_v2_antishortcut_seed20261121.pt` (SHA `a9bb69ed…`), `GOAL.md` (`d5f8e89`), và `test_sealed` chưa mở. Đây là mốc nghiên cứu trên frozen Koel Base, chưa phải bản phê duyệt triển khai (vẫn chờ xác nhận câu ngắn người Việt `EXP-6`).
+
+## 2026-11-21 — Xác nhận 3 seed cho `iso_no_hwin` (Fix #1 thuần): ứng viên head sạch nhất trên frozen Koel Base; chờ người dùng chốt promote hay dừng tối ưu head
+
+Từ [CONFIRM_3SEED_RESULTS.json](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/confirm_fix1_3seed_20261121_v1/CONFIRM_3SEED_RESULTS.json) (3 seed ghép cặp, `independent_count` khớp 100%, kiểm cả Cal recall-matched):
+- **Xác nhận hiệu quả ổn định 3/3 seed của Fix #1 thuần (`iso_no_hwin`):** cắt TIMIT FA `1,15 → 0,71 FA/câu` (`−38%`, recall-matched `0,74`) với Control Recall tăng `95,22% → 96,18%`, tăng `Held-6` (`+0,87 pp`, `I F1 +5,83 pp`), tăng `SAA-27` (`tAP +0,019`, `gAP +0,027`, recall-matched `+0,70 pp`), chỉ đánh đổi nhẹ `EpaDB TEST −0,45 pp` (`tAP −0,001`).
+- **Dừng tinh chỉnh head nhỏ lẻ thêm trên frozen Koel Base:** Sau toàn bộ chuỗi cô lập và xác nhận 3 seed, cấu hình head sạch nhất đã được chốt định lượng (`iso_no_hwin`); không cần thêm vòng ablation head nữa. Giữ nguyên V2 gốc (`a9bb69ed…`), `GOAL.md`, và `test_sealed` cho tới khi người dùng quyết định có promote một checkpoint `iso_no_hwin` làm mốc nghiên cứu mới hay không.
+
+## 2026-11-21 — Cô lập xong từng yếu tố: giữ Fix #1 thuần (`iso_no_hwin`), bỏ utterance CMVN và 5-frame `h_win`; chờ quyết định người dùng trước khi train thêm
+
+Từ [SINGLE_FACTOR_RESULTS.json](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/single_factor_iso_20261121_v1/SINGLE_FACTOR_RESULTS.json):
+- **Giữ bỏ utterance CMVN và giữ `scale_lp`:** Khôi phục CMVN làm TIMIT target FA tăng gấp đôi (`86→177`) và giảm `tAP` 4/4 tập; bỏ `scale_lp` tăng TIMIT FA và `EpaDB S→O`.
+- **Loại bỏ 5-frame `h_win` cho mô hình đa miền:** `iso_no_hwin` (chỉ Fix #1, `996 MiB` VRAM) vượt cả `fixed` lẫn `fix12_arch` về `target_AP` trên 3/4 tập (`Held-6 0,784`, `EpaDB 0,818`, `SAA-27 0,489`) và đạt `TIMIT 0,583 FA/câu` (`97,13%` control recall); 5-frame `h_win` chỉ giúp `Spontaneous` nhưng làm tụt `tAP` trên cả 3 tập đọc.
+- **Không tự promote từ 1 seed:** Trình 2 lựa chọn rõ cho người dùng trước khi train tiếp: (A) xác nhận 3 seed ghép cặp cho `iso_no_hwin` vs `fixed` (~10 phút GPU) nếu muốn chuẩn hóa ứng viên frozen-Koel tốt nhất, hoặc (B) dừng train thêm head trên frozen Koel Base do biên tăng AP còn nhỏ (`+0,6..+1,6%`) và chuyển sang dữ liệu xác nhận / biểu diễn âm học mới.
+
+## 2026-11-21 — Bác bỏ mask TIMIT `Gap I` (channel shortcut 3/3 seed); giữ quy tắc tách pha Target→Gap trên encoder đóng băng
+
+Từ [REPLAY_AUDIT.json](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/code_fixes_123_20261121_v1/REPLAY_AUDIT.json) và [GAP_MASK_ISOLATED_RESULTS.json](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/gap_mask_isolated_20261121_v1/GAP_MASK_ISOLATED_RESULTS.json):
+- **Giữ TIMIT synthetic `Gap I` làm anti-shortcut bắt buộc cho `GapHead`:** Mask `Gap I` trên TIMIT FIT gây channel shortcut (3/3 seed `TIMIT gap FA=0` nhưng tụt `gap_AP` cả 4/4 tập L2 và thua `−1,5..−5,1 pp` I F1 tại cùng ngân sách Cal L2 gap FP).
+- **Áp dụng train 2 pha (Target+Encoder sớm → đóng băng, train riêng `GapHead` muộn hơn):** Khắc phục xung đột early-stopping giữa Target (đỉnh ep 4) và Gap (đỉnh ep 6–7), nâng `Held-6 gap_AP` `0,510 → 0,576 ± 0,005` và giảm `TIMIT gap FA` xuống `9,3–11,3` (`3,5×` thấp hơn `fixed 39`) với `0` thay đổi dự đoán Target.
+- **Chưa promote checkpoint mới** thay V2 Anti-Shortcut vì `fix12_arch` vẫn kém `fixed` ở `EpaDB (−0,87 pp)` và `SAA-27 (−0,7..1,2 pp)`; bước kế tiếp là cô lập nguyên nhân tụt `EpaDB/SAA-27` trong gói `fix12_arch` (1 biến/lần).
+
+## 2026-11-21 — Chấp nhận phản biện `BLOCK` của Sol 6.2: giữ `fix12_arch` làm ứng viên giảm FA (không promote), bác bỏ `fix123_full`, không chốt "trần cứng"
+
+Sau [thí nghiệm `code_fixes_123_20261121_v1`](EXPERIMENTS.md#2026-11-21--code-fixes-13-matched-ablation-code_fixes_123_20261121_v1--phản-biện-độc-lập-sol-62) và phản biện độc lập từ Sol 6.2 (`openai-codex/gpt-6.2-sol:high`):
+- **Không chốt nguyên nhân gốc hay "trần cứng frozen Koel/nhãn gold":** Thu hồi tuyên bố nhân quả về "Koel memorize EpaDB gây modality collapse" và "nhánh bị chết"; ghi nhận đúng mức bằng chứng là `fixed` phụ thuộc nặng vào `scalars`, có rủi ro chuẩn hóa chéo ở `h_gap`, và Ridge trên frozen features vẫn vượt `fixed` trên SAA-27/Spontaneous (còn tín hiệu chưa khai thác hết).
+- **Giữ `fixed` làm đối chứng nền và giữ `fix12_arch` làm ứng viên chẩn đoán giảm FA** (`TIMIT 188→102 FA`, `Held-6 +0,84 pp`, `Spontaneous +2,33 pp`, nhưng `EpaDB -1,03 pp`, `SAA-27 -1,27 pp`, `target_AP` không tăng đồng đều) — **không promote** thay V2 Anti-Shortcut.
+- **Bác bỏ gói `fix123_full`:** gộp quá nhiều biến và kéo tụt `gAP`/`I F1` mạnh.
+- **Ưu tiên tiếp theo theo khuyến nghị phản biện:** (1) replay read-only cùng ngưỡng/cùng recall + so TP/FN ở lát `can_lp` cao & nghe mù mẫu `S_same`, (2) đối chứng cô lập 1 biến duy nhất (mask TIMIT `Gap I` trên `fix12_arch` với encoder/target đóng băng, nhiều seed).
+
+## 2026-11-21 — Ưu tiên sửa 3 lỗi code đã chứng minh trước khi kết luận hoặc mở encoder
+
+Từ [chẩn đoán sâu CPU](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/deep_forensic_20261121_v1/DEEP_FORENSIC_DIAGNOSIS.json), ưu tiên sửa trực tiếp 3 nhóm lỗi code/training trên nhánh mới (giữ nguyên `v2_prompt_eos_repair_v1` splits, checkpoint cũ, `GOAL.md`, và `test_sealed`):
+1. Cân bằng scale `lp` (chuyển sang xác suất/clamped log-prob + chiếu riêng từng nhánh có `LayerNorm`), bỏ CMVN chéo layer cho `h_gap` và chuẩn hóa từng tầng XLSR trước khi trộn, thêm `LayerNorm` cân bằng `slot_x` với `BiGRU`.
+2. Thay `h_vit ≡ h_peak` (1-frame spike) bằng cửa sổ 5 frame liên tiếp `vp + [-2,-1,0,+1,+2]` (giữ riêng `h[vp]`, không trung bình phá biên như EXP-1).
+3. Chống modality collapse vào `scalars` bằng modality dropout trong training, kích hoạt đúng `native_fa_weight` trên clean `C` của TIMIT FIT và mask nhãn `Gap I` giả của TIMIT FIT.
+Bắt buộc gọi phản biện độc lập từ Sol 6.2 trước khi chốt kết luận.
+
+## 2026-11-21 — Giữ EOS đúng, không thay checkpoint dẫn đầu
+
+[Cặp đối chứng cùng init và thứ tự batch](EXPERIMENTS.md#2026-11-21--eos-only-matched-control) xác định EOS sửa không cải thiện đồng đều: Held-6 `−0,51 pp` và TIMIT `+0,20 FA/câu` ở điểm khóa riêng, cùng chiều khi dùng chung ngưỡng Cal. Giữ `LengthAwareV2` làm nền đúng hợp đồng cho gap-only tiếp theo, không xem checkpoint `fixed` hay `legacy-eos-control` là bản thay thế V2 Anti-Shortcut. Không dùng Eval để đổi Cal hoặc mở `test_sealed`.
+
+## 2026-11-21 — Sửa chuẩn đầu vào và đối chứng trước khi train V3 lại
+
+- Dùng `LengthAwareV2` và manifest `v2_prompt_eos_repair_v1` cho đối chứng mới. [Hồi quy đã qua](EXPERIMENTS.md#2026-11-21--xác-minh-bản-vá-prompt-mdd-và-eos-không-train-lại-trên-corpus); không đổi codec PER, split hay scoreboard cũ, không coi replay là kết quả train mới.
+
+[Audit CPU](EXPERIMENTS.md#2026-11-21--audit-thuật-toán-train-seqmddv3-sau-exp-15) cho thấy cần tách vocab prompt MDD khỏi fold PER, dùng EOS theo chiều dài thật, và giữ cùng init/loss/số bước update giữa đối chứng. Không ghi đè scoreboard cũ; mọi đối chứng đã sửa phải chạy lại theo giao thức khóa từ Calibrate. Ưu tiên gap độc lập trên nền đóng băng, chưa thử LoRA lớn hơn.
+
+## 2026-11-21 — Giữ DEV532 là chẩn đoán chuyển ngưỡng, không dùng để thay SM13
+
+[Bảng B DEV532](KOEL_SM13_BENCHMARK_20261120_v1/runs/local_dev532_saa18_transfer_v1/REPORT_VI.md) chuyển nguyên ngưỡng SAA-18: R0 full-DEV-18 hơn SM13 formal seed 101 **37,94 điểm % strict micro-F1** và hơn Vanilla **9,32 điểm %**, nhưng tăng FP so với Vanilla. R0 thua Vanilla tại điểm lịch sử bảng A; không gộp hai điểm vận hành hoặc coi lợi thế ở B là không phụ thuộc ngưỡng. Tám người đều đã có trong DEV-18; giữ benchmark này riêng với bảng DEV-18 OOF và phép xác nhận trên cohort mới.
+
+## 2026-11-21 — Chốt EXP-1→5: không promote SeqMDDv3
+
+- **EXP-3 `NO_GO`:** giữ tín hiệu khe chèn làm hướng nghiên cứu, không gộp gói gap/SO: EpaDB `I F1 42,91% <47%`, S↔O giảm `3,38%/0,46%` ở Held-6/Spontaneous thay vì `≥15%`.
+- **EXP-4 `NO_GO`:** thất bại cả năm cổng tuyệt đối và độ ổn định giữa seed. Không thay V2 hay R0.
+- **EXP-5 `NO_GO`:** smoke và 6 epoch xong; PER cả hai tập vượt trần, không đạt +1 pp trên ba tập L2. Giữ Koel đóng băng và checkpoint V2 Anti-Shortcut. [Kết quả niêm phong](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/campaign_d5f8e89/CAMPAIGN_STATUS.json).
+- **EXP-2 `NO_GO`:** CMUdict anchor giảm TIMIT `313→289 FA` nhưng không đạt ngưỡng tuyệt đối, giảm AA hay guard L2; không đưa vào nền EXP-3. [Cổng định lượng](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/campaign_d5f8e89/exp2_l1_canon/OUTCOME.json).
+- **EXP-1 `NO_GO`:** không kế thừa cửa sổ. Pool-only tăng Held-6 `+0,78 pp`, full giảm `−0,13 pp` và tăng TIMIT lên `1,92 FA/câu`. [Biên nhận cổng](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/campaign_d5f8e89/exp1_window/RESULTS.json). EXP-2 dùng kiến trúc V2.
+- Dùng TIMIT TRAIN đã nhập với [bảng prompt chính thức LDC](https://catalog.ldc.upenn.edu/docs/LDC96S30/PROMPTS.TXT) → CMUdict cho `EXP-2`; không đánh đồng trường IPA bề mặt của MOCHA với nhãn từ điển. Giữ số câu và người, thay 14 câu OOV cùng người. Dùng đúng đối chứng 50 câu seed 42 của V2.
+- Khóa nguồn và các chính sách ngưỡng trên Calibrate; mọi điểm về sau vẫn là chẩn đoán. `EXP-4b/5` dùng chung Fit 401 người, không lấy dữ liệu Eval; V2 đã lưu không dùng làm đối chứng OOF DEV-18 vì có phơi nhiễm. Theo dõi [nhật ký cổng](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/campaign_d5f8e89/STAGES.jsonl).
+
+## 2026-11-21 — Giữ cùng quy tắc cảnh báo khi so sánh bản vá P0
+
+- [Đối soát CPU](EXPERIMENTS.md#2026-11-21--đối-soát-cpu-kết-quả-p0v2-từ-artifact-đã-lưu): tách `max` khỏi `sum`, và ngưỡng SAA-18 khỏi ngưỡng chuyển từ DEV-18. Không dùng `11,01 FA/câu` để quy riêng cho vá E4. Giữ ứng viên V2, chưa phê duyệt triển khai hay `GO/NO-GO` cho V3.
+
+## 2026-11-21 — Bàn giao lộ trình `SeqMDDv3` và tham chiếu phiên Pi
+
+- [`GOAL.md`](../GOAL.md) là đặc tả kế hoạch `EXP-1` → `EXP-6`, không phải kết quả hoặc phê duyệt tự động để chạy. Mốc so sánh là checkpoint `SeqMDDv2` đã commit tại `cc3572b`; giữ nguyên checkpoint cũ và split niêm phong. [Bàn giao và lệnh tra phiên](CHECKPOINT.md) dùng UUID Pi thật `01a1fa39-20f8-770b-8701-1e62fc1e9335`.
+- Các cohort đã xem là chẩn đoán; chỉ chọn ngưỡng trên Cal, không theo Eval hoặc oracle. Xác nhận mới cần người học Việt Nam câu ngắn có gold đã phân xử và đối chứng bản ngữ. Kế hoạch 220K/2.200 người vẫn là mục tiêu dài hạn; đọc bản đầy đủ trước cập nhật bằng `git show cc3572b:GOAL.md`.
+
+## 2026-11-21 — Ưu tiên ablation cửa sổ âm học; hoãn các biến thể chưa có lợi ích
+
+- [Đầu dò đã chạy](CAMPAIGN_DEEP_FORENSIC_AUTOPSY_AND_BRAINSTORM_20261121_v1/outputs/SEQ_MDD_V2_FORENSICS.json) không ủng hộ lặp lại đúng cấu hình linear probe `L6/L9`, RMS/ZCR/FFT, hoặc BiGRU cửa sổ 40 âm (stride 20) trên SAA-27. Đây không phải kết luận cho mọi cách dùng tầng thấp, đặc trưng âm học hoặc chia audio.
+- Thử vùng nhiều frame trước, tách khỏi các thay đổi về tầng/head. Các hướng L1 canonical, gap-core, `OLLR`, fusion và hiệu chỉnh theo corpus là giả thuyết cần đối chứng riêng. Giữ backbone đóng băng cho đến khi đánh giá các ablation đầu; không suy nguyên nhân nhãn hoặc lợi ích LoRA chỉ từ các probe chẩn đoán.
+
 ## 2026-11-21 — Promote `SeqMDDv2` Anti-Shortcut (`seq_mdd_v2_antishortcut_seed20261121.pt`) as New Lead Research Candidate Over `R0` (`MDD_FIXES_AND_V2_20261121_v1`)
 
 Based on [`MDD_FIXES_AND_V2_20261121_v1/REPORT_VI.md`](MDD_FIXES_AND_V2_20261121_v1/REPORT_VI.md) and [`SEQ_MDD_V2_ANTISHORTCUT_RESULTS.json`](MDD_FIXES_AND_V2_20261121_v1/outputs_seq_mdd_v2/SEQ_MDD_V2_ANTISHORTCUT_RESULTS.json) (all archived `R0`/`SM13` checkpoints preserved untouched):

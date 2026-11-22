@@ -1,0 +1,150 @@
+{
+  "name": "S0_clean_ens3_o5_o4",
+  "split": "clean_11",
+  "selected_mode_by_cal": "prob_mean",
+  "max_l1_fa_per_1k_guard": 1.0,
+  "source_checkpoints": [
+    {
+      "seed": 20261121,
+      "path": "research/BACKBONE_REP_CAMPAIGN_20261122_v1/runs/full_clean11_v1/stage0_s0_clean/seed_20261121/control.pt",
+      "sha256": "91af44030de6b1ada7ddf153d7bed1d3f0d43ba9a687d39b86b20858ed2ec5fe",
+      "single_policy": {
+        "tau_t": 0.31,
+        "tau_g": 0.9,
+        "cal_l2_strict_f1": 67.82,
+        "cal_l1_fa_per_1k": 0.26,
+        "temperature": {
+          "default": [
+            1.0,
+            1.0
+          ]
+        },
+        "alpha_realized": 0.0
+      }
+    },
+    {
+      "seed": 20261122,
+      "path": "research/BACKBONE_REP_CAMPAIGN_20261122_v1/runs/full_clean11_v1/stage0_s0_clean/seed_20261122/control.pt",
+      "sha256": "02fc2acf20f42c885a1867f41d5f7fb419a031f750c4dcdf41d6818db1eac6d1",
+      "single_policy": {
+        "tau_t": 0.34,
+        "tau_g": 0.775,
+        "cal_l2_strict_f1": 68.54,
+        "cal_l1_fa_per_1k": 0.79,
+        "temperature": {
+          "default": [
+            1.0,
+            1.0
+          ]
+        },
+        "alpha_realized": 0.0
+      }
+    },
+    {
+      "seed": 20261123,
+      "path": "research/BACKBONE_REP_CAMPAIGN_20261122_v1/runs/full_clean11_v1/stage0_s0_clean/seed_20261123/control.pt",
+      "sha256": "6679cf4aca7923b7cdc2ea68824f6c80e48fdb890999a06bb149716df56ea33c",
+      "single_policy": {
+        "tau_t": 0.44,
+        "tau_g": 0.85,
+        "cal_l2_strict_f1": 68.1,
+        "cal_l1_fa_per_1k": 0.79,
+        "temperature": {
+          "default": [
+            1.0,
+            1.0
+          ]
+        },
+        "alpha_realized": 0.0
+      }
+    }
+  ],
+  "policy": {
+    "tau_t": 0.35,
+    "tau_g": 0.38,
+    "rho_o": 0.5,
+    "gap_temp": 1.190983,
+    "gap_bias": -2.569552,
+    "ensemble_mode": "prob_mean",
+    "n_seeds": 3,
+    "cal_l2_strict_f1": 68.53,
+    "cal_l1_fa_per_1k": 0.3906,
+    "cal_guard_met": true
+  },
+  "gap_calibration": {
+    "gap_temp": 1.190983,
+    "gap_bias": -2.569552,
+    "cal_nll_before": 0.025599,
+    "cal_nll_after": 0.015338,
+    "cal_ece_before": 0.011342,
+    "cal_ece_after": 0.001296,
+    "cal_emp_i_rate": 0.005923,
+    "cal_pred_i_before": 0.017265,
+    "cal_pred_i_after": 0.005923
+  },
+  "cal_candidates": {
+    "prob_mean": {
+      "policy": {
+        "tau_t": 0.35,
+        "tau_g": 0.38,
+        "rho_o": 0.5,
+        "gap_temp": 1.190983,
+        "gap_bias": -2.569552,
+        "ensemble_mode": "prob_mean",
+        "n_seeds": 3,
+        "cal_l2_strict_f1": 68.53,
+        "cal_l1_fa_per_1k": 0.3906,
+        "cal_guard_met": true
+      },
+      "cal_t_ap": 0.80524,
+      "cal_g_ap": 0.55976,
+      "gap_calibration": {
+        "gap_temp": 1.190983,
+        "gap_bias": -2.569552,
+        "cal_nll_before": 0.025599,
+        "cal_nll_after": 0.015338,
+        "cal_ece_before": 0.011342,
+        "cal_ece_after": 0.001296,
+        "cal_emp_i_rate": 0.005923,
+        "cal_pred_i_before": 0.017265,
+        "cal_pred_i_after": 0.005923
+      }
+    },
+    "logit_mean": {
+      "policy": {
+        "tau_t": 0.31,
+        "tau_g": 0.35,
+        "rho_o": 0.5,
+        "gap_temp": 1.31918,
+        "gap_bias": -2.81015,
+        "ensemble_mode": "logit_mean",
+        "n_seeds": 3,
+        "cal_l2_strict_f1": 68.4866,
+        "cal_l1_fa_per_1k": 0.5208,
+        "cal_guard_met": true
+      },
+      "cal_t_ap": 0.80519,
+      "cal_g_ap": 0.55571,
+      "gap_calibration": {
+        "gap_temp": 1.31918,
+        "gap_bias": -2.81015,
+        "cal_nll_before": 0.024716,
+        "cal_nll_after": 0.015568,
+        "cal_ece_before": 0.009185,
+        "cal_ece_after": 0.000929,
+        "cal_emp_i_rate": 0.005923,
+        "cal_pred_i_before": 0.015108,
+        "cal_pred_i_after": 0.005923
+      }
+    }
+  },
+  "head_latency": {
+    "device": "cuda",
+    "n_utts": 100,
+    "single_head_p50_ms": 3.35,
+    "single_head_p95_ms": 6.53,
+    "ens3_head_p50_ms": 10.07,
+    "ens3_head_p95_ms": 19.84,
+    "overhead_p50_ms": 6.72
+  }
+}

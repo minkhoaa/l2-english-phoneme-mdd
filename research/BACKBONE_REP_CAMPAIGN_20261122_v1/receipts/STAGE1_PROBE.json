@@ -1,0 +1,250 @@
+{
+  "stage": "stage1_probe",
+  "candidate_backbones": [
+    "wavlm_large",
+    "wavlm_base_plus",
+    "huper_mid",
+    "whisper_small"
+  ],
+  "ranked_by_cal": [
+    "wavlm_base_plus",
+    "wavlm_large",
+    "whisper_small",
+    "huper_mid"
+  ],
+  "cal_gate": {
+    "wavlm_large": {
+      "guard": true,
+      "target": false,
+      "gap": false,
+      "passed": false,
+      "delta": {
+        "cal_l2_target_ap": 0.0015270532291338235,
+        "cal_l2_blind_spot_ap": 0.00723511071790639,
+        "cal_l2_gap_ap": 0.0023648584649107462,
+        "cal_l1_fa_at_r70": -0.005555555555555557
+      }
+    },
+    "wavlm_base_plus": {
+      "guard": true,
+      "target": false,
+      "gap": true,
+      "passed": true,
+      "delta": {
+        "cal_l2_target_ap": -0.00023285485947499573,
+        "cal_l2_blind_spot_ap": -0.0015974643147065176,
+        "cal_l2_gap_ap": 0.0250427978785715,
+        "cal_l1_fa_at_r70": -0.004232804232804234
+      }
+    },
+    "huper_mid": {
+      "guard": true,
+      "target": false,
+      "gap": false,
+      "passed": false,
+      "delta": {
+        "cal_l2_target_ap": -0.00010672219528562454,
+        "cal_l2_blind_spot_ap": 0.0073136023093527125,
+        "cal_l2_gap_ap": -0.040665502526777586,
+        "cal_l1_fa_at_r70": -0.004761904761904764
+      }
+    },
+    "whisper_small": {
+      "guard": false,
+      "target": false,
+      "gap": false,
+      "passed": false,
+      "delta": {
+        "cal_l2_target_ap": -0.0005727848802478119,
+        "cal_l2_blind_spot_ap": 0.0012576890674561164,
+        "cal_l2_gap_ap": 0.008354625986310316,
+        "cal_l1_fa_at_r70": 0.002910052910052908
+      }
+    }
+  },
+  "smoke_gate_override": false,
+  "selected_top1": "wavlm_base_plus",
+  "selected_top2": null,
+  "probes": {
+    "koel_only": {
+      "cal_l2_target_ap": 0.7446379862780589,
+      "cal_l2_blind_spot_ap": 0.10657465691414372,
+      "cal_l2_gap_ap": 0.3881433492424329,
+      "cal_l1_fa_at_r70": 0.01904761904761905,
+      "composite_cal_score": 0.48192006006175914,
+      "n_fit_slots": 32008,
+      "n_cal_blind_positives": 451,
+      "n_cal_gap_positives": 102,
+      "target_ridge_alpha": 1000.0,
+      "gap_ridge_alpha": 1000.0,
+      "dim": 1037
+    },
+    "koel+wavlm_large": {
+      "cal_l2_target_ap": 0.7461650395071927,
+      "cal_l2_blind_spot_ap": 0.11380976763205011,
+      "cal_l2_gap_ap": 0.3905082077073436,
+      "cal_l1_fa_at_r70": 0.013492063492063493,
+      "composite_cal_score": 0.4853270915846801,
+      "n_fit_slots": 32008,
+      "n_cal_blind_positives": 451,
+      "n_cal_gap_positives": 102,
+      "target_ridge_alpha": 5000.0,
+      "gap_ridge_alpha": 5000.0,
+      "dim": 3085
+    },
+    "koel+wavlm_base_plus": {
+      "cal_l2_target_ap": 0.7444051314185839,
+      "cal_l2_blind_spot_ap": 0.1049771925994372,
+      "cal_l2_gap_ap": 0.4131861471210044,
+      "cal_l1_fa_at_r70": 0.014814814814814815,
+      "composite_cal_score": 0.48633295291332396,
+      "n_fit_slots": 32008,
+      "n_cal_blind_positives": 451,
+      "n_cal_gap_positives": 102,
+      "target_ridge_alpha": 5000.0,
+      "gap_ridge_alpha": 5000.0,
+      "dim": 2573
+    },
+    "koel+huper_mid": {
+      "cal_l2_target_ap": 0.7445312640827733,
+      "cal_l2_blind_spot_ap": 0.11388825922349644,
+      "cal_l2_gap_ap": 0.3474778467156553,
+      "cal_l1_fa_at_r70": 0.014285714285714285,
+      "composite_cal_score": 0.47592767915156664,
+      "n_fit_slots": 32008,
+      "n_cal_blind_positives": 451,
+      "n_cal_gap_positives": 102,
+      "target_ridge_alpha": 5000.0,
+      "gap_ridge_alpha": 5000.0,
+      "dim": 3085
+    },
+    "koel+whisper_small": {
+      "cal_l2_target_ap": 0.7440652013978111,
+      "cal_l2_blind_spot_ap": 0.10783234598159984,
+      "cal_l2_gap_ap": 0.3964979752287432,
+      "cal_l1_fa_at_r70": 0.021957671957671957,
+      "composite_cal_score": 0.4836818995391341,
+      "n_fit_slots": 32008,
+      "n_cal_blind_positives": 451,
+      "n_cal_gap_positives": 102,
+      "target_ridge_alpha": 5000.0,
+      "gap_ridge_alpha": 5000.0,
+      "dim": 2573
+    },
+    "koel+wavlm_base_plus+charsiu_proto": {
+      "cal_l2_target_ap": 0.7378892136006874,
+      "cal_l2_blind_spot_ap": 0.11109349428082399,
+      "cal_l2_gap_ap": 0.4131861471210044,
+      "cal_l1_fa_at_r70": 0.012962962962962963,
+      "composite_cal_score": 0.48490988450879174,
+      "n_fit_slots": 32008,
+      "n_cal_blind_positives": 451,
+      "n_cal_gap_positives": 102,
+      "target_ridge_alpha": 5000.0,
+      "gap_ridge_alpha": 5000.0,
+      "dim": 2584
+    }
+  },
+  "extract_receipts": {
+    "wavlm_large_fit_cal": {
+      "backbone": "wavlm_large",
+      "layers": [
+        6,
+        9,
+        12,
+        15,
+        18,
+        21
+      ],
+      "hidden_dim": 1024,
+      "total": 4316,
+      "extracted": 4316,
+      "reused": 0,
+      "unique_waves_run": 4316,
+      "peak_mib": 2586.0,
+      "wall_s": 523.5455226750018
+    },
+    "wavlm_base_plus_fit_cal": {
+      "backbone": "wavlm_base_plus",
+      "layers": [
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "hidden_dim": 768,
+      "total": 4316,
+      "extracted": 4316,
+      "reused": 0,
+      "unique_waves_run": 4316,
+      "peak_mib": 1318.0,
+      "wall_s": 217.65372349899917
+    },
+    "huper_mid_fit_cal": {
+      "backbone": "huper_mid",
+      "layers": [
+        6,
+        9,
+        12,
+        15,
+        18,
+        21
+      ],
+      "hidden_dim": 1024,
+      "total": 4316,
+      "extracted": 4316,
+      "reused": 0,
+      "unique_waves_run": 4316,
+      "peak_mib": 2586.0,
+      "wall_s": 508.69627924700035
+    },
+    "whisper_small_fit_cal": {
+      "backbone": "whisper_small",
+      "layers": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "hidden_dim": 768,
+      "total": 4316,
+      "extracted": 4316,
+      "reused": 0,
+      "unique_waves_run": 4316,
+      "peak_mib": 578.0,
+      "wall_s": 1158.245639531
+    },
+    "charsiu_fit_cal": {
+      "extracted": 4316,
+      "reused": 0,
+      "peak_mib": 1308.0,
+      "wall_s": 301.54992176000087
+    },
+    "charsiu_eval": {
+      "extracted": 2446,
+      "reused": 0,
+      "peak_mib": 1216.0,
+      "wall_s": 210.5957232159999
+    },
+    "wavlm_base_plus_eval": {
+      "backbone": "wavlm_base_plus",
+      "layers": [
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "hidden_dim": 768,
+      "total": 2446,
+      "extracted": 2446,
+      "reused": 0,
+      "unique_waves_run": 2396,
+      "peak_mib": 1230.0,
+      "wall_s": 154.96296247899954
+    }
+  }
+}

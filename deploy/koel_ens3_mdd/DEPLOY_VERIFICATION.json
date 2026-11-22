@@ -1,0 +1,31 @@
+{
+  "status": "DEPLOY_BUNDLE_VERIFIED",
+  "bundle_path": "deploy/koel_ens3_mdd/bundle_s0_clean_ens3_o5_o4.pt",
+  "bundle_size_mib": 15.94,
+  "bundle_sha256": "44a978287b5d2e301688ee9a7f1cb9c222a93a2d371a607955ab8ff8b62042cf",
+  "raw_wav_parity": {
+    "n_utts": 15,
+    "target_call_exact": "491/491",
+    "gap_call_exact": "506/506",
+    "target_max_abs_diff": 5.5e-07,
+    "gap_max_abs_diff": 1.02e-06,
+    "all_calls_exact": true
+  },
+  "end_to_end_latency_gpu": {
+    "device": "cuda",
+    "short_held6_n": 50,
+    "short_total_p50_ms": 155.8,
+    "short_total_p95_ms": 220.6,
+    "short_koel_p50_ms": 132.7,
+    "short_ens3_head_p50_ms": 11.1,
+    "short_peak_vram_mib": 1646.0,
+    "stella_n": 5,
+    "stella_total_p50_ms": 1477.6,
+    "stella_peak_vram_mib": 3498.0
+  },
+  "end_to_end_latency_cpu": {
+    "short_held6_n": 10,
+    "short_total_p50_ms": 1791.1
+  },
+  "wall_s": 49.7
+}

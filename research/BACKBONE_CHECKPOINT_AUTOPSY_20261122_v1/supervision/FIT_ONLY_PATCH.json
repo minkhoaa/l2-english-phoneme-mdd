@@ -1,0 +1,1595 @@
+{
+  "role": "fit",
+  "scope": "clean_11 isolated realized-ID ablation; not applied to campaign",
+  "input_file_sha256": "ac4c0d02eb3757a3b94c24ca79a3030c26577e9091599333157de9be50515fb6",
+  "input_records_sha256": "fd7fe0b1f9d5466d632e240d2c9dfedb5e0a621e441f30141658315be03babbc",
+  "treatment_records_sha256": "54536a14215062036d11b0f3f831aaf2e28234f62aea22762b8d892da16ef1d9",
+  "untouched_fields_sha256": "268fe54916d05b6e8048c6e860678258f43f6f9fb7ab07b158426ee4a6aace40",
+  "rows": 3681,
+  "reference_counts": {
+    "train": 540,
+    "dev_search": 264,
+    "dev_cal": 88,
+    "dev_replication": 150
+  },
+  "reference_digest": "e6f1d0c1957d20e0f5a68826d9892e83a033243cfd13de1fdfa53fc2536b58cd",
+  "code_sha256": "6d17de77dd85384e984bafbac5e0884a0f5ffef08b41591cf36681d19bb4a029",
+  "changes": [
+    {
+      "uid": "HJK_arctic_a0369",
+      "slot_index": 36,
+      "canonical": "Z",
+      "wav_sha256": "fd72d768822dc75b4df64df33da56000ab3f6b5dbc7cb47e4d3efe18a59a0241",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "HJK_arctic_b0019",
+      "slot_index": 1,
+      "canonical": "IH",
+      "wav_sha256": "cf23d20210025d26ba16f0aa4576da46819634ca5c78208abbd52c2049a2c8c7",
+      "old": 8,
+      "new": 17
+    },
+    {
+      "uid": "HKK_arctic_a0071",
+      "slot_index": 9,
+      "canonical": "B",
+      "wav_sha256": "9d0dae7db4ecebc587108f1c4b06ba56cba2ddfd9d8f6d6539ba635dda9572fe",
+      "old": 2,
+      "new": 26
+    },
+    {
+      "uid": "HKK_arctic_a0091",
+      "slot_index": 15,
+      "canonical": "DH",
+      "wav_sha256": "869c30c8f4b947ea30ad0b926fce90b21ebf319650257d1fa5dcca92c70f2ee2",
+      "old": 2,
+      "new": 8
+    },
+    {
+      "uid": "HKK_arctic_a0128",
+      "slot_index": 7,
+      "canonical": "OW",
+      "wav_sha256": "371eedd89a4c6aef130822cd4aba228c87510753f65415d7a829b16de619ce55",
+      "old": 39,
+      "new": 0
+    },
+    {
+      "uid": "HKK_arctic_a0145",
+      "slot_index": 22,
+      "canonical": "EY",
+      "wav_sha256": "49fe148d8dec7282aa8f508d5e766363ea045d971caf5dd6506fb20366c011e0",
+      "old": 27,
+      "new": 10
+    },
+    {
+      "uid": "HKK_arctic_b0304",
+      "slot_index": 13,
+      "canonical": "Z",
+      "wav_sha256": "9a1e324b7fca24eaecee1e0c3d5bb6913d60884c089a9f097d747aabeb6a1772",
+      "old": 8,
+      "new": 28
+    },
+    {
+      "uid": "NCC_arctic_a0031",
+      "slot_index": 12,
+      "canonical": "AH",
+      "wav_sha256": "a6147a783ea44787f0ff2c6afcc3fa57cd5b99d5ebfd4454c94d491d01897e19",
+      "old": 39,
+      "new": 12
+    },
+    {
+      "uid": "NCC_arctic_a0045",
+      "slot_index": 13,
+      "canonical": "AY",
+      "wav_sha256": "3cc9790a575f23e82aac4a88ab38ab5125f7286ccb2c6a25ea264f958668cdf4",
+      "old": 39,
+      "new": 16
+    },
+    {
+      "uid": "NCC_arctic_a0093",
+      "slot_index": 16,
+      "canonical": "AW",
+      "wav_sha256": "c3cf81a26acb7952b022e7059fc3f8f9399a4585414228f60422ab5cd862d62c",
+      "old": 22,
+      "new": 0
+    },
+    {
+      "uid": "NCC_arctic_a0125",
+      "slot_index": 4,
+      "canonical": "Z",
+      "wav_sha256": "92e3a17f63c732e54b138dda6861ef476c4c95912378bd072ad1ba0b06af334d",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "NCC_arctic_a0128",
+      "slot_index": 35,
+      "canonical": "AO",
+      "wav_sha256": "6c34103ba07fa248f6ec56997a0f808d12475b254c3df4e69b2be5ef5a2d45fd",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "NCC_arctic_a0225",
+      "slot_index": 28,
+      "canonical": "AA",
+      "wav_sha256": "7cccb546ed565df2231437a1cdf6b31042299313195cce322b7a25498f92ba26",
+      "old": 3,
+      "new": 35
+    },
+    {
+      "uid": "NCC_arctic_a0225",
+      "slot_index": 29,
+      "canonical": "R",
+      "wav_sha256": "7cccb546ed565df2231437a1cdf6b31042299313195cce322b7a25498f92ba26",
+      "old": 28,
+      "new": 3
+    },
+    {
+      "uid": "NCC_arctic_a0576",
+      "slot_index": 10,
+      "canonical": "ZH",
+      "wav_sha256": "f0b4a7590fd4408c8d63887b92b892c1c95440ec1a57cca0fec50a21255555c6",
+      "old": 17,
+      "new": 28
+    },
+    {
+      "uid": "NCC_arctic_b0004",
+      "slot_index": 2,
+      "canonical": "EH",
+      "wav_sha256": "36815fba8bbcbae734b9cb73b39d7cdb428085810a659bfe0f690737aefdcbeb",
+      "old": 39,
+      "new": 5
+    },
+    {
+      "uid": "NCC_arctic_b0358",
+      "slot_index": 39,
+      "canonical": "DH",
+      "wav_sha256": "50e99682c1e1fb6e1205256ef3f2f839b9d408b0872de8bb535f038a37d87379",
+      "old": 17,
+      "new": 8
+    },
+    {
+      "uid": "NCC_arctic_b0479",
+      "slot_index": 14,
+      "canonical": "AO",
+      "wav_sha256": "da25e8eeb1296563d22ea70f3be2f1af89b1e6013b98509178d371d3f7bb9e88",
+      "old": 2,
+      "new": 33
+    },
+    {
+      "uid": "NJS_arctic_a0062",
+      "slot_index": 7,
+      "canonical": "EH",
+      "wav_sha256": "de3d75cc39f32286754ae8a3528915558064bfcc123f3929daa5331585497478",
+      "old": 39,
+      "new": 11
+    },
+    {
+      "uid": "NJS_arctic_a0077",
+      "slot_index": 8,
+      "canonical": "ER",
+      "wav_sha256": "7ae0e62f2e775d1999b1327e8a282d38dd4709dfbcbe4977ad3d66c75690af12",
+      "old": 2,
+      "new": 27
+    },
+    {
+      "uid": "NJS_arctic_a0079",
+      "slot_index": 13,
+      "canonical": "UW",
+      "wav_sha256": "58ef2d392c3916035a5687918c5c91b926584ab56b287bc6b3f42149f7f04244",
+      "old": 17,
+      "new": 3
+    },
+    {
+      "uid": "NJS_arctic_a0441",
+      "slot_index": 5,
+      "canonical": "N",
+      "wav_sha256": "0d61830493e49ac187d65c84d19bf73a7d5a4cd29bac37eeda86f17541da2772",
+      "old": 39,
+      "new": 23
+    },
+    {
+      "uid": "NJS_arctic_b0269",
+      "slot_index": 32,
+      "canonical": "OW",
+      "wav_sha256": "d70c6502a859863a86a81fc12e932660045db213973d1ebbc06b4948f957f518",
+      "old": 30,
+      "new": 3
+    },
+    {
+      "uid": "PNV_arctic_a0010",
+      "slot_index": 12,
+      "canonical": "AH",
+      "wav_sha256": "8c025fbe7ed2251dbe4cf0f9b84cfa9a6452383ebfeacf2720ced5d9081778de",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "PNV_arctic_a0023",
+      "slot_index": 26,
+      "canonical": "AH",
+      "wav_sha256": "5a9d4ae9536c6719770f14a67196508be3bc5c4930205bbf98b50d8c99dd7460",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "PNV_arctic_a0024",
+      "slot_index": 41,
+      "canonical": "AH",
+      "wav_sha256": "f5a44c62a59c8ed3c767a1f44b22e2a158afb80ad8b2f6b1d77be4dea357579a",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "PNV_arctic_a0047",
+      "slot_index": 31,
+      "canonical": "UH",
+      "wav_sha256": "e4ebdd6227580b6ec1a85c48e3392502efffeb113085493803f39167c9a9319a",
+      "old": 39,
+      "new": 33
+    },
+    {
+      "uid": "PNV_arctic_a0073",
+      "slot_index": 24,
+      "canonical": "AH",
+      "wav_sha256": "18e000e8c5490ce9075bb79022d89831772de34e04fb10725e18913032036e9c",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "PNV_arctic_a0085",
+      "slot_index": 5,
+      "canonical": "AH",
+      "wav_sha256": "5be3abe4cc96ed36b2d59feb976cc8f3a010f75e374e0a61010dc813961de62a",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "PNV_arctic_a0105",
+      "slot_index": 16,
+      "canonical": "AH",
+      "wav_sha256": "4e4d6e7d336eeab69ff404fd5e703e3c2e086aaf3e934c2521ffd0ef9b625ec6",
+      "old": 39,
+      "new": 33
+    },
+    {
+      "uid": "PNV_arctic_a0106",
+      "slot_index": 14,
+      "canonical": "AE",
+      "wav_sha256": "5eeffec141c81dfc940c8c5d99dd40c67c885a0aa3a2ef8ea6046efadfc058b5",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "PNV_arctic_a0106",
+      "slot_index": 42,
+      "canonical": "AA",
+      "wav_sha256": "5eeffec141c81dfc940c8c5d99dd40c67c885a0aa3a2ef8ea6046efadfc058b5",
+      "old": 39,
+      "new": 3
+    },
+    {
+      "uid": "PNV_arctic_a0108",
+      "slot_index": 31,
+      "canonical": "S",
+      "wav_sha256": "93324ce35a63cf54a6354ad17a3a244c9363f6bfa2426a886da1eb967821e55e",
+      "old": 39,
+      "new": 29
+    },
+    {
+      "uid": "PNV_arctic_a0112",
+      "slot_index": 15,
+      "canonical": "AA",
+      "wav_sha256": "1322f09195a9c3e80aa1cfa77a67c741af2d10b7f4a814db98e5c88011d494a5",
+      "old": 39,
+      "new": 1
+    },
+    {
+      "uid": "PNV_arctic_a0121",
+      "slot_index": 7,
+      "canonical": "ER",
+      "wav_sha256": "dfcf6abd34a0dc520a02667eeea4ed6e9f6c80775c37ae49c464a5c3d904d1b5",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "PNV_arctic_a0121",
+      "slot_index": 8,
+      "canonical": "AE",
+      "wav_sha256": "dfcf6abd34a0dc520a02667eeea4ed6e9f6c80775c37ae49c464a5c3d904d1b5",
+      "old": 32,
+      "new": 10
+    },
+    {
+      "uid": "PNV_arctic_a0122",
+      "slot_index": 27,
+      "canonical": "AO",
+      "wav_sha256": "258eded26a5fe83780229f80fdfde6b1ada2b1d3e490778515ef9c099dbe3e48",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "PNV_arctic_a0125",
+      "slot_index": 13,
+      "canonical": "N",
+      "wav_sha256": "6424534d55f44d96d1a0488918a9a45ef143332bef2ddb43dd255c17d0473651",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "PNV_arctic_a0125",
+      "slot_index": 38,
+      "canonical": "AA",
+      "wav_sha256": "6424534d55f44d96d1a0488918a9a45ef143332bef2ddb43dd255c17d0473651",
+      "old": 39,
+      "new": 3
+    },
+    {
+      "uid": "PNV_arctic_a0128",
+      "slot_index": 0,
+      "canonical": "DH",
+      "wav_sha256": "8b71a806c6d39a39bb9d048ef1669a1b1fffd34a6d8dcd0d61cc23b436d4dd9d",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "PNV_arctic_a0128",
+      "slot_index": 1,
+      "canonical": "IH",
+      "wav_sha256": "8b71a806c6d39a39bb9d048ef1669a1b1fffd34a6d8dcd0d61cc23b436d4dd9d",
+      "old": 8,
+      "new": 2
+    },
+    {
+      "uid": "PNV_arctic_a0129",
+      "slot_index": 12,
+      "canonical": "S",
+      "wav_sha256": "036388f223e602b8201c2939ad56cb8f50b04f9799876d9a10a1bcba503a6f8f",
+      "old": 39,
+      "new": 37
+    },
+    {
+      "uid": "PNV_arctic_a0136",
+      "slot_index": 2,
+      "canonical": "AW",
+      "wav_sha256": "f0a7c7e3bcad363a2800c3ba3e057638807379cea7ec5c98394b058f035e50b0",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "PNV_arctic_a0136",
+      "slot_index": 3,
+      "canonical": "T",
+      "wav_sha256": "f0a7c7e3bcad363a2800c3ba3e057638807379cea7ec5c98394b058f035e50b0",
+      "old": 24,
+      "new": 34
+    },
+    {
+      "uid": "PNV_arctic_a0168",
+      "slot_index": 19,
+      "canonical": "S",
+      "wav_sha256": "5504c67f558ff1b09cb7bd98e3b86a7f3633ab2c467c50fb7f0e62f018cb09be",
+      "old": 39,
+      "new": 37
+    },
+    {
+      "uid": "PNV_arctic_a0168",
+      "slot_index": 20,
+      "canonical": "AE",
+      "wav_sha256": "5504c67f558ff1b09cb7bd98e3b86a7f3633ab2c467c50fb7f0e62f018cb09be",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "PNV_arctic_a0178",
+      "slot_index": 12,
+      "canonical": "JH",
+      "wav_sha256": "38dbcf23f17aeb8471c25743bbeba24fdf0475da3b7c2cfea6a2484abcdddc86",
+      "old": 39,
+      "new": 38
+    },
+    {
+      "uid": "PNV_arctic_a0364",
+      "slot_index": 3,
+      "canonical": "AE",
+      "wav_sha256": "ee30c9768e47085cec5d86c4a8e5f8c82997024f26d6831ad526c8a15d409aaa",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "PNV_arctic_a0375",
+      "slot_index": 53,
+      "canonical": "S",
+      "wav_sha256": "9d01c9f88a851385379f1fd8f4b98815af47ce06ad4bd03a0b4f272e9b4ca48a",
+      "old": 39,
+      "new": 29
+    },
+    {
+      "uid": "PNV_arctic_a0378",
+      "slot_index": 28,
+      "canonical": "AE",
+      "wav_sha256": "affb2358c66f0febf99bac65b4bb67868d2fc5294329dd4108207de62b570d35",
+      "old": 39,
+      "new": 0
+    },
+    {
+      "uid": "PNV_arctic_a0519",
+      "slot_index": 5,
+      "canonical": "AE",
+      "wav_sha256": "4c62816ba2e2ebc938284389cc925d13842a6b3837dc27b1e81cadd850af6b64",
+      "old": 39,
+      "new": 0
+    },
+    {
+      "uid": "PNV_arctic_a0519",
+      "slot_index": 28,
+      "canonical": "V",
+      "wav_sha256": "4c62816ba2e2ebc938284389cc925d13842a6b3837dc27b1e81cadd850af6b64",
+      "old": 39,
+      "new": 6
+    },
+    {
+      "uid": "PNV_arctic_b0048",
+      "slot_index": 15,
+      "canonical": "AE",
+      "wav_sha256": "a51b114d23d2c44a6d675e768339f6a99be4a849fa2b27d412a80accd65fc7e1",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "PNV_arctic_b0140",
+      "slot_index": 14,
+      "canonical": "UH",
+      "wav_sha256": "dd716172652e69742de337003d6a84d56ec5d747654b5a751bbe6cd4d8b14d8c",
+      "old": 39,
+      "new": 33
+    },
+    {
+      "uid": "PNV_arctic_b0140",
+      "slot_index": 17,
+      "canonical": "OW",
+      "wav_sha256": "dd716172652e69742de337003d6a84d56ec5d747654b5a751bbe6cd4d8b14d8c",
+      "old": 39,
+      "new": 4
+    },
+    {
+      "uid": "PNV_arctic_b0140",
+      "slot_index": 24,
+      "canonical": "OW",
+      "wav_sha256": "dd716172652e69742de337003d6a84d56ec5d747654b5a751bbe6cd4d8b14d8c",
+      "old": 39,
+      "new": 4
+    },
+    {
+      "uid": "PNV_arctic_b0140",
+      "slot_index": 32,
+      "canonical": "NG",
+      "wav_sha256": "dd716172652e69742de337003d6a84d56ec5d747654b5a751bbe6cd4d8b14d8c",
+      "old": 39,
+      "new": 22
+    },
+    {
+      "uid": "PNV_arctic_b0140",
+      "slot_index": 33,
+      "canonical": "DH",
+      "wav_sha256": "dd716172652e69742de337003d6a84d56ec5d747654b5a751bbe6cd4d8b14d8c",
+      "old": 22,
+      "new": 8
+    },
+    {
+      "uid": "PNV_arctic_b0140",
+      "slot_index": 34,
+      "canonical": "EH",
+      "wav_sha256": "dd716172652e69742de337003d6a84d56ec5d747654b5a751bbe6cd4d8b14d8c",
+      "old": 8,
+      "new": 2
+    },
+    {
+      "uid": "PNV_arctic_b0165",
+      "slot_index": 17,
+      "canonical": "SH",
+      "wav_sha256": "a01a1f78cefbbfcb8306dd9da59f9c9191716d3e66e30b4391a7529c70e1c1a7",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "PNV_arctic_b0201",
+      "slot_index": 14,
+      "canonical": "DH",
+      "wav_sha256": "7c942643b0d3cdcc73c1770bf9c22bd42d53bdd9cb2731b59a84e6467a6cbba4",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "PNV_arctic_b0201",
+      "slot_index": 46,
+      "canonical": "DH",
+      "wav_sha256": "7c942643b0d3cdcc73c1770bf9c22bd42d53bdd9cb2731b59a84e6467a6cbba4",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "PNV_arctic_b0304",
+      "slot_index": 22,
+      "canonical": "IH",
+      "wav_sha256": "0ce0553c71613cba769167a7727f3812c9a0eb3e14d7647e4d34b90c3fdaad34",
+      "old": 39,
+      "new": 17
+    },
+    {
+      "uid": "PNV_arctic_b0315",
+      "slot_index": 17,
+      "canonical": "N",
+      "wav_sha256": "bf5fd9f5e0200e1fd305c6bc937a99fdab99f8cb687524683327c75f97372ad3",
+      "old": 28,
+      "new": 13
+    },
+    {
+      "uid": "PNV_arctic_b0416",
+      "slot_index": 14,
+      "canonical": "AE",
+      "wav_sha256": "4d42db7a7e537943b78f567a0b12f5ccfd08e4cac9140becbd2e33a834ce957d",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "PNV_arctic_b0481",
+      "slot_index": 15,
+      "canonical": "L",
+      "wav_sha256": "e06ad89654004be7ed971dcd7ad8d3c859ff695ddddc31e3a8acf8cb1aad2f17",
+      "old": 39,
+      "new": 35
+    },
+    {
+      "uid": "PNV_arctic_b0503",
+      "slot_index": 31,
+      "canonical": "T",
+      "wav_sha256": "b0eeda65f93c4b194e78eb64432e9e763ec301fa60ba069e0687e774a1228770",
+      "old": 39,
+      "new": 7
+    },
+    {
+      "uid": "RRBI_arctic_a0031",
+      "slot_index": 0,
+      "canonical": "DH",
+      "wav_sha256": "1ddf412476e32d0366474a0f7c8ce16e8d28c345dd256d5a2366f886ba212023",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "RRBI_arctic_a0031",
+      "slot_index": 1,
+      "canonical": "EY",
+      "wav_sha256": "1ddf412476e32d0366474a0f7c8ce16e8d28c345dd256d5a2366f886ba212023",
+      "old": 8,
+      "new": 10
+    },
+    {
+      "uid": "RRBI_arctic_a0099",
+      "slot_index": 18,
+      "canonical": "IH",
+      "wav_sha256": "6342180c2f13ce369e76f0330a20218153ef1da5d04d77567118c0bbf33ef0d1",
+      "old": 39,
+      "new": 11
+    },
+    {
+      "uid": "RRBI_arctic_a0116",
+      "slot_index": 31,
+      "canonical": "AH",
+      "wav_sha256": "ac93774f28e6119632b334e26390b51b52cb754b48d28dc9b0d3a2d4917de013",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "RRBI_arctic_a0116",
+      "slot_index": 32,
+      "canonical": "W",
+      "wav_sha256": "ac93774f28e6119632b334e26390b51b52cb754b48d28dc9b0d3a2d4917de013",
+      "old": 32,
+      "new": 34
+    },
+    {
+      "uid": "RRBI_arctic_a0116",
+      "slot_index": 33,
+      "canonical": "ER",
+      "wav_sha256": "ac93774f28e6119632b334e26390b51b52cb754b48d28dc9b0d3a2d4917de013",
+      "old": 34,
+      "new": 2
+    },
+    {
+      "uid": "RRBI_arctic_a0120",
+      "slot_index": 32,
+      "canonical": "AA",
+      "wav_sha256": "7e427d9ca7fbf56c0aa2b53240872ba4ca2588a0da8d538b18bc0636341f6330",
+      "old": 27,
+      "new": 2
+    },
+    {
+      "uid": "RRBI_arctic_a0139",
+      "slot_index": 44,
+      "canonical": "SH",
+      "wav_sha256": "ba64d8ce076dd7926dd54db2ed15bb296a2f3b6ca374c852fb6f65da37afd3f0",
+      "old": 15,
+      "new": 28
+    },
+    {
+      "uid": "RRBI_arctic_b0315",
+      "slot_index": 3,
+      "canonical": "DH",
+      "wav_sha256": "64e113a813b63f3e6982b461fe4be070b8f4e3f4b91b61ce85a29d812e1cd75a",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "SKA_arctic_a0008",
+      "slot_index": 9,
+      "canonical": "ER",
+      "wav_sha256": "55498db0ec0823af8741bab4b93d7dd6db70699098b0f3a3899763d57bbbd85b",
+      "old": 27,
+      "new": 2
+    },
+    {
+      "uid": "SKA_arctic_a0022",
+      "slot_index": 7,
+      "canonical": "ER",
+      "wav_sha256": "9bb66d80c04fa54d63156f873f9d0ab4e983e0da180cbb877dece577000fac68",
+      "old": 27,
+      "new": 10
+    },
+    {
+      "uid": "SKA_arctic_a0022",
+      "slot_index": 32,
+      "canonical": "ER",
+      "wav_sha256": "9bb66d80c04fa54d63156f873f9d0ab4e983e0da180cbb877dece577000fac68",
+      "old": 27,
+      "new": 10
+    },
+    {
+      "uid": "SKA_arctic_a0029",
+      "slot_index": 10,
+      "canonical": "ER",
+      "wav_sha256": "48ec9dbb18c13185d5658c89dea89ed3876ae716c52fa989838d7fffdaa4d3cf",
+      "old": 20,
+      "new": 10
+    },
+    {
+      "uid": "SKA_arctic_a0052",
+      "slot_index": 14,
+      "canonical": "OW",
+      "wav_sha256": "eaf6d3c429148964879b678ce0e863edf30b911b605eac3289c8694538df773b",
+      "old": 39,
+      "new": 3
+    },
+    {
+      "uid": "SKA_arctic_a0092",
+      "slot_index": 20,
+      "canonical": "AH",
+      "wav_sha256": "72bbd799b3505c7382ffb0d871009103f670677a083b760219cdecf8d5e8085e",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "SKA_arctic_a0097",
+      "slot_index": 11,
+      "canonical": "JH",
+      "wav_sha256": "0dd3ec88b67b5a0a7600d4083649a28aeb6d1609ad49c9108272046fa7c59616",
+      "old": 16,
+      "new": 38
+    },
+    {
+      "uid": "SKA_arctic_a0097",
+      "slot_index": 32,
+      "canonical": "NG",
+      "wav_sha256": "0dd3ec88b67b5a0a7600d4083649a28aeb6d1609ad49c9108272046fa7c59616",
+      "old": 2,
+      "new": 22
+    },
+    {
+      "uid": "SKA_arctic_a0136",
+      "slot_index": 24,
+      "canonical": "S",
+      "wav_sha256": "48c72b24c701a22fe7cf7b0368c98023cdc1c943fa2948c26f0c2d662b43d405",
+      "old": 39,
+      "new": 37
+    },
+    {
+      "uid": "SKA_arctic_a0426",
+      "slot_index": 8,
+      "canonical": "OW",
+      "wav_sha256": "843f6d3a9339ad1e2df4d37c2067dbb5fd740b394f4db57a4af039871d3fbdb1",
+      "old": 2,
+      "new": 3
+    },
+    {
+      "uid": "SKA_arctic_a0426",
+      "slot_index": 22,
+      "canonical": "IH",
+      "wav_sha256": "843f6d3a9339ad1e2df4d37c2067dbb5fd740b394f4db57a4af039871d3fbdb1",
+      "old": 36,
+      "new": 32
+    },
+    {
+      "uid": "SKA_arctic_b0413",
+      "slot_index": 10,
+      "canonical": "IH",
+      "wav_sha256": "7fa47f7851e48f1a670a309d9b403004777b4c9b963dfddc5269a2fe6167e360",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "SKA_arctic_b0444",
+      "slot_index": 6,
+      "canonical": "AA",
+      "wav_sha256": "b8e9d98db4cef4e39cee348ec4b2169948e81a6387e4f13de7339d5a5d93048c",
+      "old": 39,
+      "new": 3
+    },
+    {
+      "uid": "SKA_arctic_b0461",
+      "slot_index": 6,
+      "canonical": "AH",
+      "wav_sha256": "11ca2ee20d25be0b31526d8e343490506b6cad68e8e109b7f33027e6d5a269cc",
+      "old": 2,
+      "new": 3
+    },
+    {
+      "uid": "SKA_arctic_b0534",
+      "slot_index": 12,
+      "canonical": "R",
+      "wav_sha256": "7dee9c7f88c9fceb2b5520262bd99621764021b974b4d18eccfc59ae427a3f37",
+      "old": 39,
+      "new": 27
+    },
+    {
+      "uid": "THV_arctic_a0011",
+      "slot_index": 26,
+      "canonical": "D",
+      "wav_sha256": "920a20272054c55f9a4ebca9fa6ee99dc4f0d63c4ec1fdc5dc34c121425add39",
+      "old": 19,
+      "new": 30
+    },
+    {
+      "uid": "THV_arctic_a0019",
+      "slot_index": 20,
+      "canonical": "Z",
+      "wav_sha256": "3662e32f1a824eda18fc6099f57b79a9e5204aaaccae03727b6bd806b15993b1",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "THV_arctic_a0023",
+      "slot_index": 67,
+      "canonical": "JH",
+      "wav_sha256": "4b71a657222e5e940680187af7b6b7a61885cc66757c8dd3775fb67688fec969",
+      "old": 39,
+      "new": 7
+    },
+    {
+      "uid": "THV_arctic_a0025",
+      "slot_index": 33,
+      "canonical": "EY",
+      "wav_sha256": "bd2f0da2e822a274fec4784d9509cd6f0a4a616c040e62cb0051a4a1111fddac",
+      "old": 39,
+      "new": 1
+    },
+    {
+      "uid": "THV_arctic_a0025",
+      "slot_index": 34,
+      "canonical": "L",
+      "wav_sha256": "bd2f0da2e822a274fec4784d9509cd6f0a4a616c040e62cb0051a4a1111fddac",
+      "old": 1,
+      "new": 35
+    },
+    {
+      "uid": "THV_arctic_a0042",
+      "slot_index": 7,
+      "canonical": "IH",
+      "wav_sha256": "374885755c0711dde916809b6949528b32d803fe66563f52196c6850cc9239dc",
+      "old": 39,
+      "new": 17
+    },
+    {
+      "uid": "THV_arctic_a0048",
+      "slot_index": 20,
+      "canonical": "R",
+      "wav_sha256": "11a524a445c923375330dc079d4d572d57a7c452d582a79cd9b55b00e20705f9",
+      "old": 28,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_a0048",
+      "slot_index": 21,
+      "canonical": "K",
+      "wav_sha256": "11a524a445c923375330dc079d4d572d57a7c452d582a79cd9b55b00e20705f9",
+      "old": 19,
+      "new": 14
+    },
+    {
+      "uid": "THV_arctic_a0054",
+      "slot_index": 0,
+      "canonical": "DH",
+      "wav_sha256": "8aad6177dff3a18d753861fb2b6bc5e5f6e8822efc1fd55ce2137735e9197c10",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "THV_arctic_a0054",
+      "slot_index": 1,
+      "canonical": "EH",
+      "wav_sha256": "8aad6177dff3a18d753861fb2b6bc5e5f6e8822efc1fd55ce2137735e9197c10",
+      "old": 8,
+      "new": 12
+    },
+    {
+      "uid": "THV_arctic_a0062",
+      "slot_index": 16,
+      "canonical": "AH",
+      "wav_sha256": "d9c590b1fc7a0d2fd56ec20622299ad43f8bfd85414a0eff5f2871f412e28a84",
+      "old": 39,
+      "new": 0
+    },
+    {
+      "uid": "THV_arctic_a0062",
+      "slot_index": 17,
+      "canonical": "DH",
+      "wav_sha256": "d9c590b1fc7a0d2fd56ec20622299ad43f8bfd85414a0eff5f2871f412e28a84",
+      "old": 0,
+      "new": 8
+    },
+    {
+      "uid": "THV_arctic_a0062",
+      "slot_index": 18,
+      "canonical": "ER",
+      "wav_sha256": "d9c590b1fc7a0d2fd56ec20622299ad43f8bfd85414a0eff5f2871f412e28a84",
+      "old": 8,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_a0065",
+      "slot_index": 21,
+      "canonical": "ER",
+      "wav_sha256": "d2dd8cb81f11a68522de9c4c36523ee2a0e73ebef3b59655a7e4d50244a77fb2",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_a0073",
+      "slot_index": 24,
+      "canonical": "AH",
+      "wav_sha256": "5ee14bad1e8765fa78acbcf23b041292ba526a7936b1f51f5b141c02e86ca25a",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "THV_arctic_a0077",
+      "slot_index": 0,
+      "canonical": "IH",
+      "wav_sha256": "c2690ea4c42f1afffe4e68847409437c25b83b18f5c0e3059620811d95a552eb",
+      "old": 39,
+      "new": 17
+    },
+    {
+      "uid": "THV_arctic_a0077",
+      "slot_index": 1,
+      "canonical": "T",
+      "wav_sha256": "c2690ea4c42f1afffe4e68847409437c25b83b18f5c0e3059620811d95a552eb",
+      "old": 17,
+      "new": 28
+    },
+    {
+      "uid": "THV_arctic_a0077",
+      "slot_index": 2,
+      "canonical": "IH",
+      "wav_sha256": "c2690ea4c42f1afffe4e68847409437c25b83b18f5c0e3059620811d95a552eb",
+      "old": 28,
+      "new": 17
+    },
+    {
+      "uid": "THV_arctic_a0090",
+      "slot_index": 8,
+      "canonical": "OY",
+      "wav_sha256": "60913d9f4dc336aa418c6e5e109d0278ce2bd1a9fc2fa3e6ab3e60c1c235cd6e",
+      "old": 39,
+      "new": 3
+    },
+    {
+      "uid": "THV_arctic_a0094",
+      "slot_index": 15,
+      "canonical": "DH",
+      "wav_sha256": "c78d6babda53a0c9dbab0fba25dfe8750f549d8fe613c3147d22e786b6a1bbd6",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "THV_arctic_a0107",
+      "slot_index": 4,
+      "canonical": "OW",
+      "wav_sha256": "33435b5f9dee1455d646e87661150ce3730210fe944c29b44fd0da426ec8494c",
+      "old": 39,
+      "new": 0
+    },
+    {
+      "uid": "THV_arctic_a0111",
+      "slot_index": 18,
+      "canonical": "EY",
+      "wav_sha256": "4596e868f8d0cf95646f254477554cbf106b90fc4253f8855611785794d7e6ba",
+      "old": 27,
+      "new": 10
+    },
+    {
+      "uid": "THV_arctic_a0112",
+      "slot_index": 1,
+      "canonical": "IY",
+      "wav_sha256": "b0c5b149d8dca9d1db9a9f461c155a5c483a9f4abcfd8c14013dc1bcf6a4f316",
+      "old": 28,
+      "new": 16
+    },
+    {
+      "uid": "THV_arctic_a0116",
+      "slot_index": 13,
+      "canonical": "UW",
+      "wav_sha256": "ccc1c7cb5afc6bd12a8aca7c2cff5b3d8c5141131697b8f50325a2bbdcd31266",
+      "old": 28,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_a0116",
+      "slot_index": 40,
+      "canonical": "AH",
+      "wav_sha256": "ccc1c7cb5afc6bd12a8aca7c2cff5b3d8c5141131697b8f50325a2bbdcd31266",
+      "old": 39,
+      "new": 17
+    },
+    {
+      "uid": "THV_arctic_a0120",
+      "slot_index": 25,
+      "canonical": "Z",
+      "wav_sha256": "a741f7c860ce76e0d01ee4d1756545524d9e9ac366e2895a7400eaff7d3e6194",
+      "old": 2,
+      "new": 28
+    },
+    {
+      "uid": "THV_arctic_a0121",
+      "slot_index": 30,
+      "canonical": "R",
+      "wav_sha256": "9910d43a5883a2cd8b57a56f749ced28e9ed9dc1faabec0c325459e80db88e04",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_a0125",
+      "slot_index": 34,
+      "canonical": "L",
+      "wav_sha256": "b3a1e04882b0793e041410d1cc8c2852852046a90f1b8b26fed91c1ad959eb12",
+      "old": 39,
+      "new": 35
+    },
+    {
+      "uid": "THV_arctic_a0126",
+      "slot_index": 9,
+      "canonical": "EY",
+      "wav_sha256": "2b0dc263fa17cc4cb30c00b2ae86a34a88382e0154b05a5eaeeeda761af44e45",
+      "old": 16,
+      "new": 10
+    },
+    {
+      "uid": "THV_arctic_a0136",
+      "slot_index": 8,
+      "canonical": "V",
+      "wav_sha256": "dfafc4cb339c010019a266bcf0d98633a601bfb53613462dcc71d2e248c92200",
+      "old": 39,
+      "new": 6
+    },
+    {
+      "uid": "THV_arctic_a0137",
+      "slot_index": 11,
+      "canonical": "AE",
+      "wav_sha256": "8b93a38e19ba40e9725c8e8cc8fd613b7fcadfcdd4a451d459a3569e12108285",
+      "old": 39,
+      "new": 12
+    },
+    {
+      "uid": "THV_arctic_a0178",
+      "slot_index": 12,
+      "canonical": "JH",
+      "wav_sha256": "9790f92e57c0c9a3a8fd911bca49e24f69e12ccc63644ecd6ec20a96faece28f",
+      "old": 12,
+      "new": 37
+    },
+    {
+      "uid": "THV_arctic_a0271",
+      "slot_index": 12,
+      "canonical": "EY",
+      "wav_sha256": "1faac6f5b2394ab4432e9e25022e25d21daa24b9959556c85d047cd77f9531d0",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "THV_arctic_a0475",
+      "slot_index": 9,
+      "canonical": "CH",
+      "wav_sha256": "afe89375376275367951e8bf286e4e282a5d99969bc474a1f3b1e197a0eb0d6d",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "THV_arctic_a0519",
+      "slot_index": 9,
+      "canonical": "AO",
+      "wav_sha256": "6682e7bf16050f40dbaf727358945c15d128fef7e57993576757014f7b7e4486",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_b0019",
+      "slot_index": 19,
+      "canonical": "JH",
+      "wav_sha256": "c9c421813871d30d8b48512a9d8a56730ddfcc3cc0595a456aa701e72d0914f1",
+      "old": 39,
+      "new": 29
+    },
+    {
+      "uid": "THV_arctic_b0019",
+      "slot_index": 29,
+      "canonical": "AH",
+      "wav_sha256": "c9c421813871d30d8b48512a9d8a56730ddfcc3cc0595a456aa701e72d0914f1",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "THV_arctic_b0048",
+      "slot_index": 21,
+      "canonical": "TH",
+      "wav_sha256": "10a105ce69f22eacb04eb84aaded42adc40acf120ce2b02b97aeb14b5ab5fc13",
+      "old": 39,
+      "new": 30
+    },
+    {
+      "uid": "THV_arctic_b0048",
+      "slot_index": 36,
+      "canonical": "AH",
+      "wav_sha256": "10a105ce69f22eacb04eb84aaded42adc40acf120ce2b02b97aeb14b5ab5fc13",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "THV_arctic_b0074",
+      "slot_index": 12,
+      "canonical": "DH",
+      "wav_sha256": "0021ff05e797e286b695ce3b800822593e5bf9e04009b1e4e9ee6b3bd29e0793",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "THV_arctic_b0074",
+      "slot_index": 13,
+      "canonical": "EH",
+      "wav_sha256": "0021ff05e797e286b695ce3b800822593e5bf9e04009b1e4e9ee6b3bd29e0793",
+      "old": 8,
+      "new": 12
+    },
+    {
+      "uid": "THV_arctic_b0074",
+      "slot_index": 22,
+      "canonical": "ER",
+      "wav_sha256": "0021ff05e797e286b695ce3b800822593e5bf9e04009b1e4e9ee6b3bd29e0793",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_b0074",
+      "slot_index": 23,
+      "canonical": "AE",
+      "wav_sha256": "0021ff05e797e286b695ce3b800822593e5bf9e04009b1e4e9ee6b3bd29e0793",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "THV_arctic_b0074",
+      "slot_index": 33,
+      "canonical": "AH",
+      "wav_sha256": "0021ff05e797e286b695ce3b800822593e5bf9e04009b1e4e9ee6b3bd29e0793",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "THV_arctic_b0106",
+      "slot_index": 5,
+      "canonical": "UH",
+      "wav_sha256": "15a2c4c241cd97c166b061b4b340a853cfc2c721deecd926a7bc39dd6afdf4af",
+      "old": 39,
+      "new": 33
+    },
+    {
+      "uid": "THV_arctic_b0106",
+      "slot_index": 32,
+      "canonical": "ER",
+      "wav_sha256": "15a2c4c241cd97c166b061b4b340a853cfc2c721deecd926a7bc39dd6afdf4af",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_b0140",
+      "slot_index": 1,
+      "canonical": "EY",
+      "wav_sha256": "3f259fd9e0a4cd99f3e3dc38d8f30d3a344db94407100502ef5264394904c5da",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "THV_arctic_b0140",
+      "slot_index": 3,
+      "canonical": "JH",
+      "wav_sha256": "3f259fd9e0a4cd99f3e3dc38d8f30d3a344db94407100502ef5264394904c5da",
+      "old": 10,
+      "new": 29
+    },
+    {
+      "uid": "THV_arctic_b0140",
+      "slot_index": 17,
+      "canonical": "OW",
+      "wav_sha256": "3f259fd9e0a4cd99f3e3dc38d8f30d3a344db94407100502ef5264394904c5da",
+      "old": 39,
+      "new": 4
+    },
+    {
+      "uid": "THV_arctic_b0140",
+      "slot_index": 24,
+      "canonical": "OW",
+      "wav_sha256": "3f259fd9e0a4cd99f3e3dc38d8f30d3a344db94407100502ef5264394904c5da",
+      "old": 39,
+      "new": 4
+    },
+    {
+      "uid": "THV_arctic_b0140",
+      "slot_index": 37,
+      "canonical": "ER",
+      "wav_sha256": "3f259fd9e0a4cd99f3e3dc38d8f30d3a344db94407100502ef5264394904c5da",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "THV_arctic_b0165",
+      "slot_index": 9,
+      "canonical": "DH",
+      "wav_sha256": "5ad5f257bebd85f21fd7f4d48b3ca1537a29957cba67e5a9de6ea6208b081cb3",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "THV_arctic_b0165",
+      "slot_index": 17,
+      "canonical": "SH",
+      "wav_sha256": "5ad5f257bebd85f21fd7f4d48b3ca1537a29957cba67e5a9de6ea6208b081cb3",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "THV_arctic_b0201",
+      "slot_index": 11,
+      "canonical": "AE",
+      "wav_sha256": "87d47296b10a1973e84eed77cfcffc3a3f5c1ab510e690d19a96cee6cf5ae38a",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "THV_arctic_b0201",
+      "slot_index": 28,
+      "canonical": "AO",
+      "wav_sha256": "87d47296b10a1973e84eed77cfcffc3a3f5c1ab510e690d19a96cee6cf5ae38a",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "THV_arctic_b0315",
+      "slot_index": 3,
+      "canonical": "DH",
+      "wav_sha256": "9e14f1468e9c682b43aff7b0cf98466f338fbed52245225893110ccf0f6a2ac8",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "THV_arctic_b0315",
+      "slot_index": 7,
+      "canonical": "AH",
+      "wav_sha256": "9e14f1468e9c682b43aff7b0cf98466f338fbed52245225893110ccf0f6a2ac8",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "THV_arctic_b0380",
+      "slot_index": 7,
+      "canonical": "L",
+      "wav_sha256": "8fb6d747675954f3c5bd8c8d292db9689fe3ba471a24865c54334ddfd5772b1b",
+      "old": 39,
+      "new": 33
+    },
+    {
+      "uid": "THV_arctic_b0416",
+      "slot_index": 21,
+      "canonical": "D",
+      "wav_sha256": "776ccb27528037b791742b0d645aa03431bdeb9787f086cd07d911443f9cd8d2",
+      "old": 16,
+      "new": 30
+    },
+    {
+      "uid": "THV_arctic_b0422",
+      "slot_index": 4,
+      "canonical": "AH",
+      "wav_sha256": "e7394b3edbcd554497888eabbf8c0b069e6fee8c6e6954e4b5a7d03a190c43c5",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "THV_arctic_b0422",
+      "slot_index": 10,
+      "canonical": "IY",
+      "wav_sha256": "e7394b3edbcd554497888eabbf8c0b069e6fee8c6e6954e4b5a7d03a190c43c5",
+      "old": 39,
+      "new": 16
+    },
+    {
+      "uid": "THV_arctic_b0422",
+      "slot_index": 22,
+      "canonical": "ER",
+      "wav_sha256": "e7394b3edbcd554497888eabbf8c0b069e6fee8c6e6954e4b5a7d03a190c43c5",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "THV_arctic_b0425",
+      "slot_index": 1,
+      "canonical": "EH",
+      "wav_sha256": "adb8fbe2a628063bf1e77bc497230922017bf72d9362b023246611211919425e",
+      "old": 39,
+      "new": 12
+    },
+    {
+      "uid": "THV_arctic_b0425",
+      "slot_index": 22,
+      "canonical": "AE",
+      "wav_sha256": "adb8fbe2a628063bf1e77bc497230922017bf72d9362b023246611211919425e",
+      "old": 8,
+      "new": 10
+    },
+    {
+      "uid": "THV_arctic_b0465",
+      "slot_index": 3,
+      "canonical": "S",
+      "wav_sha256": "747d47f1b42a645374d688dcb8417b1ddfa64b66ce49e71dd013625c2755066a",
+      "old": 2,
+      "new": 29
+    },
+    {
+      "uid": "THV_arctic_b0465",
+      "slot_index": 5,
+      "canonical": "CH",
+      "wav_sha256": "747d47f1b42a645374d688dcb8417b1ddfa64b66ce49e71dd013625c2755066a",
+      "old": 30,
+      "new": 28
+    },
+    {
+      "uid": "THV_arctic_b0481",
+      "slot_index": 15,
+      "canonical": "L",
+      "wav_sha256": "37f3fbcc34a43a44e66184cc5396373e002e208fe25c7cfac0b382d70c26c792",
+      "old": 39,
+      "new": 35
+    },
+    {
+      "uid": "THV_arctic_b0503",
+      "slot_index": 13,
+      "canonical": "N",
+      "wav_sha256": "956aa341b165224345006f0787c3ba879dfc1b97d5321fbeb9388917029c5146",
+      "old": 2,
+      "new": 23
+    },
+    {
+      "uid": "THV_arctic_b0503",
+      "slot_index": 14,
+      "canonical": "JH",
+      "wav_sha256": "956aa341b165224345006f0787c3ba879dfc1b97d5321fbeb9388917029c5146",
+      "old": 28,
+      "new": 14
+    },
+    {
+      "uid": "THV_arctic_b0509",
+      "slot_index": 3,
+      "canonical": "AE",
+      "wav_sha256": "c61bd440be4a0ed7921a7db2c536894b0cee6b88f38a7b7b0054b94c81690255",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "THV_arctic_b0509",
+      "slot_index": 9,
+      "canonical": "IH",
+      "wav_sha256": "c61bd440be4a0ed7921a7db2c536894b0cee6b88f38a7b7b0054b94c81690255",
+      "old": 39,
+      "new": 17
+    },
+    {
+      "uid": "THV_arctic_b0509",
+      "slot_index": 10,
+      "canonical": "L",
+      "wav_sha256": "c61bd440be4a0ed7921a7db2c536894b0cee6b88f38a7b7b0054b94c81690255",
+      "old": 17,
+      "new": 35
+    },
+    {
+      "uid": "TXHC_arctic_a0003",
+      "slot_index": 19,
+      "canonical": "V",
+      "wav_sha256": "f861db9537608b0a7b4ea1e9f282dc94c87d533302c81d890ef50661176f165d",
+      "old": 2,
+      "new": 6
+    },
+    {
+      "uid": "TXHC_arctic_a0022",
+      "slot_index": 42,
+      "canonical": "AH",
+      "wav_sha256": "fa7dbf5618ace3e5f6625cf39b96cf67f1d91f78cf19641c359b88acfd54f0c2",
+      "old": 39,
+      "new": 32
+    },
+    {
+      "uid": "TXHC_arctic_a0045",
+      "slot_index": 13,
+      "canonical": "AY",
+      "wav_sha256": "ea819a50793415375cc98d438380a86b86b8cb81671cb6806364d9391f2b8b86",
+      "old": 39,
+      "new": 16
+    },
+    {
+      "uid": "TXHC_arctic_a0051",
+      "slot_index": 31,
+      "canonical": "IY",
+      "wav_sha256": "e5f9666516854811260aa22d1a074bbecd861cf594fe7e5fc7afaf9d87fa7b11",
+      "old": 20,
+      "new": 16
+    },
+    {
+      "uid": "TXHC_arctic_a0077",
+      "slot_index": 3,
+      "canonical": "Z",
+      "wav_sha256": "15475c5e4263e3e705c3b9464ebf11f28fc613a3015fbf38e6337bf722d96e26",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "TXHC_arctic_a0130",
+      "slot_index": 4,
+      "canonical": "Z",
+      "wav_sha256": "6ec6653c31ce49ec0d3bf2c6c575bd09dae33744d0ca75bbca9fbacaf926eb98",
+      "old": 22,
+      "new": 28
+    },
+    {
+      "uid": "TXHC_arctic_a0536",
+      "slot_index": 7,
+      "canonical": "S",
+      "wav_sha256": "98793dd334805ab519630c319e0aa2b64c9262de017808913afb396ef602fda5",
+      "old": 39,
+      "new": 29
+    },
+    {
+      "uid": "TXHC_arctic_a0575",
+      "slot_index": 24,
+      "canonical": "Z",
+      "wav_sha256": "07e230df17db888c7ab763b1e26781a823666823ca6b9042abe9d842ce77f370",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "TXHC_arctic_b0074",
+      "slot_index": 38,
+      "canonical": "IH",
+      "wav_sha256": "c7622c694bc1e3912b4e27ba48e72b722e185710d07399bf0f8db01b541546d3",
+      "old": 39,
+      "new": 17
+    },
+    {
+      "uid": "TXHC_arctic_b0251",
+      "slot_index": 29,
+      "canonical": "K",
+      "wav_sha256": "07a26a08ba57d9992b72a4ba42a7fd4aaf5ad481179df67cd388406f83f547bf",
+      "old": 2,
+      "new": 14
+    },
+    {
+      "uid": "TXHC_arctic_b0366",
+      "slot_index": 14,
+      "canonical": "AY",
+      "wav_sha256": "a7ce13f25d25915b7cf776187f0e280f3d596b029fc23c5a8c71677eb1124d71",
+      "old": 39,
+      "new": 2
+    },
+    {
+      "uid": "YDCK_arctic_a0039",
+      "slot_index": 7,
+      "canonical": "D",
+      "wav_sha256": "56f7c41109b49407e226fc552f7abb81d59938ae8cf84206a7d2115d770340f9",
+      "old": 39,
+      "new": 27
+    },
+    {
+      "uid": "YDCK_arctic_a0047",
+      "slot_index": 17,
+      "canonical": "DH",
+      "wav_sha256": "6f7fa92ec70ad7a55772e03d64c59ba1f7626df739d5a4f4b8f2faa99906d3d0",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "YDCK_arctic_b0355",
+      "slot_index": 47,
+      "canonical": "AO",
+      "wav_sha256": "8a3b33a247109ab92339fbb3cd5b887c08ceb5328394f37b3c35ba74647091b2",
+      "old": 39,
+      "new": 24
+    },
+    {
+      "uid": "YKWK_arctic_a0019",
+      "slot_index": 20,
+      "canonical": "Z",
+      "wav_sha256": "03cb38f4232e055819f6febdf4963a7a600879f1915cd5c6b19d6fa56a6a91bc",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "YKWK_arctic_a0029",
+      "slot_index": 12,
+      "canonical": "L",
+      "wav_sha256": "c76a3ae80824e4daac718222c565cf5c876bceddd4fb8d3e517f8089ea7d6ab1",
+      "old": 2,
+      "new": 35
+    },
+    {
+      "uid": "YKWK_arctic_a0065",
+      "slot_index": 4,
+      "canonical": "OW",
+      "wav_sha256": "1cd857d849cd6ded96b33b10f051cab3bff22bad681fca346a8eb70359b712cb",
+      "old": 39,
+      "new": 3
+    },
+    {
+      "uid": "YKWK_arctic_a0065",
+      "slot_index": 5,
+      "canonical": "Z",
+      "wav_sha256": "1cd857d849cd6ded96b33b10f051cab3bff22bad681fca346a8eb70359b712cb",
+      "old": 3,
+      "new": 28
+    },
+    {
+      "uid": "YKWK_arctic_a0101",
+      "slot_index": 11,
+      "canonical": "IY",
+      "wav_sha256": "670df6fca4af1ccae16035b57c8e0da49c0b2e21b19b019b702bc0b79b289ed6",
+      "old": 39,
+      "new": 16
+    },
+    {
+      "uid": "YKWK_arctic_a0168",
+      "slot_index": 14,
+      "canonical": "DH",
+      "wav_sha256": "fd932a4abd6de07aaa5d637f48a1c156880cae5c96e9a76608209d50ead6e626",
+      "old": 16,
+      "new": 15
+    },
+    {
+      "uid": "YKWK_arctic_a0168",
+      "slot_index": 15,
+      "canonical": "IY",
+      "wav_sha256": "fd932a4abd6de07aaa5d637f48a1c156880cae5c96e9a76608209d50ead6e626",
+      "old": 28,
+      "new": 16
+    },
+    {
+      "uid": "YKWK_arctic_a0233",
+      "slot_index": 13,
+      "canonical": "N",
+      "wav_sha256": "f654af034cf65a3e9ab53ea218da40030446d357b0e0ffba8b874862e6628581",
+      "old": 39,
+      "new": 21
+    },
+    {
+      "uid": "YKWK_arctic_a0233",
+      "slot_index": 20,
+      "canonical": "JH",
+      "wav_sha256": "f654af034cf65a3e9ab53ea218da40030446d357b0e0ffba8b874862e6628581",
+      "old": 39,
+      "new": 7
+    },
+    {
+      "uid": "YKWK_arctic_a0271",
+      "slot_index": 23,
+      "canonical": "V",
+      "wav_sha256": "14a8d309cb201516dd99132f960a7e40f24e923598bff63664cbddb4745f7ff5",
+      "old": 39,
+      "new": 13
+    },
+    {
+      "uid": "YKWK_arctic_a0364",
+      "slot_index": 20,
+      "canonical": "AA",
+      "wav_sha256": "d8c0ce26421016e21093d67f99d778c3820c1a3b5643bb31d3f1cb4a8aeb8f2a",
+      "old": 39,
+      "new": 4
+    },
+    {
+      "uid": "YKWK_arctic_a0365",
+      "slot_index": 23,
+      "canonical": "DH",
+      "wav_sha256": "363548cba9a41242dd42c2fe47ebf9a2e638739a42e9076712dbcd3a01506ccb",
+      "old": 2,
+      "new": 8
+    },
+    {
+      "uid": "YKWK_arctic_a0369",
+      "slot_index": 29,
+      "canonical": "DH",
+      "wav_sha256": "f9d655beba20e4cb15ea76a4cdfe378a92209ab8873163afe28b09451df4f2ef",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "YKWK_arctic_a0375",
+      "slot_index": 23,
+      "canonical": "Z",
+      "wav_sha256": "3066281927d7883f25017e35379b91270f777b0a9de1595d781359d32f432b0f",
+      "old": 39,
+      "new": 28
+    },
+    {
+      "uid": "YKWK_arctic_a0475",
+      "slot_index": 3,
+      "canonical": "AW",
+      "wav_sha256": "db45a921f3ef49655b5d32fd96e06365ab6daa5c8d4f594342fdb2b957947729",
+      "old": 2,
+      "new": 0
+    },
+    {
+      "uid": "YKWK_arctic_b0192",
+      "slot_index": 0,
+      "canonical": "AW",
+      "wav_sha256": "81aafb04c67ec0494b899daaf9441a4104b81f810f3822d80ed1a79d752a752e",
+      "old": 39,
+      "new": 0
+    },
+    {
+      "uid": "YKWK_arctic_b0201",
+      "slot_index": 14,
+      "canonical": "DH",
+      "wav_sha256": "59a48f451d6fa7f1b248e3e346efe15af56f743afd7d688a04820b7823ede4d9",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "YKWK_arctic_b0225",
+      "slot_index": 24,
+      "canonical": "EY",
+      "wav_sha256": "b5f1fdb9e816d7a8e486292a7a0f4bc2d25fc2fb19d03e3553ab8e0738098183",
+      "old": 39,
+      "new": 10
+    },
+    {
+      "uid": "YKWK_arctic_b0315",
+      "slot_index": 3,
+      "canonical": "DH",
+      "wav_sha256": "a2cb30417ab5844d2b7bc72de8c9b49ca63e9430b7bcfff3a2196a7aeed6329e",
+      "old": 39,
+      "new": 8
+    },
+    {
+      "uid": "YKWK_arctic_b0315",
+      "slot_index": 28,
+      "canonical": "AW",
+      "wav_sha256": "a2cb30417ab5844d2b7bc72de8c9b49ca63e9430b7bcfff3a2196a7aeed6329e",
+      "old": 39,
+      "new": 0
+    }
+  ]
+}

@@ -1,0 +1,908 @@
+{
+  "split": "clean_11",
+  "seed": 20261121,
+  "epochs": 7,
+  "lr_total_epochs": 14,
+  "init_sha256": "3f5d0f99a5482dedaf21288ebb25246d749f63243638856c9dc468c61140075f",
+  "o0_cal_l2_target_recall": 0.74584,
+  "wall_total_s": 771.1,
+  "arms": {
+    "O0_control": {
+      "spec": {
+        "name": "O0_control",
+        "use_o1_timit_freq": false,
+        "tau_la": 0.0,
+        "phone_drop_p": 0.0,
+        "lambda_so_cond": 0.0
+      },
+      "best_epoch": 5,
+      "init_sha256": "3f5d0f99a5482dedaf21288ebb25246d749f63243638856c9dc468c61140075f",
+      "train_order_sha256": "c4a15315a0506887790f5243d9e695bad2d32277478ee5eaf8f9b2154824cf45",
+      "checkpoint_sha256": "219c57e29dd3a452117c6e2c6622d00bef671b66b5817a410cecaef47c543e4e",
+      "seal_sha256": "7dfc2fa9dcc5b54fa044815f3d2d3847612cd4f07c4b9a4aa4bba4600b59067d",
+      "wall_s": 0.0,
+      "cal": {
+        "cal_sel": 0.87771,
+        "cal_t_ap": 0.79888,
+        "cal_g_ap": 0.52557,
+        "cal_blind_ap": 0.22118,
+        "cal_l2_strict_f1": 67.79,
+        "cal_l1_fa_per_1k": 0.79,
+        "tau_t": 0.27,
+        "tau_g": 0.925
+      },
+      "history": [],
+      "pred_dir": "research/ORTHO_IMPROVEMENTS_20261122_v1/runs/cpu_ablation_s20261121/O0_control/eval_predictions",
+      "resumed": true,
+      "eval_native": {
+        "held6": {
+          "f1": 65.67,
+          "tAP": 0.7744,
+          "gAP": 0.5456,
+          "so_swap": 272,
+          "s2o": 152,
+          "o2s": 120,
+          "key_c_fpr": {
+            "DH": 64.8,
+            "Z": 32.4,
+            "AH": 7.7,
+            "AO": 3.7
+          }
+        },
+        "epadb_test": {
+          "f1": 68.53,
+          "tAP": 0.8183,
+          "gAP": 0.3459,
+          "so_swap": 199,
+          "s2o": 111,
+          "o2s": 88,
+          "key_c_fpr": {
+            "DH": 2.4,
+            "Z": 68.8,
+            "AH": 40.7,
+            "AO": 44.7
+          }
+        },
+        "saa27": {
+          "f1": 43.5,
+          "tAP": 0.4637,
+          "gAP": 0.2258,
+          "so_swap": 55,
+          "s2o": 45,
+          "o2s": 10,
+          "key_c_fpr": {
+            "DH": 25.8,
+            "Z": 51.5,
+            "AH": 23.6,
+            "AO": 4.3
+          }
+        },
+        "spont_h6": {
+          "f1": 64.13,
+          "tAP": 0.8191,
+          "gAP": 0.5103,
+          "so_swap": 60,
+          "s2o": 34,
+          "o2s": 26,
+          "key_c_fpr": {
+            "DH": 66.7,
+            "Z": 17.6,
+            "AH": 12.5,
+            "AO": 4.8
+          }
+        },
+        "timit_fa_utt": 0.401,
+        "timit_t_fa": 76,
+        "timit_g_fa": 1,
+        "timit_uw_fa": 2,
+        "timit_rare8_fa": 12,
+        "ctrl_rec": 93.55
+      },
+      "rm_tau_t": 0.2703,
+      "eval_cal_recall_matched": {
+        "held6": {
+          "f1": 65.67,
+          "tAP": 0.7744,
+          "gAP": 0.5456,
+          "so_swap": 272,
+          "s2o": 152,
+          "o2s": 120,
+          "key_c_fpr": {
+            "DH": 64.8,
+            "Z": 32.4,
+            "AH": 7.7,
+            "AO": 3.7
+          }
+        },
+        "epadb_test": {
+          "f1": 68.53,
+          "tAP": 0.8183,
+          "gAP": 0.3459,
+          "so_swap": 199,
+          "s2o": 111,
+          "o2s": 88,
+          "key_c_fpr": {
+            "DH": 2.4,
+            "Z": 68.8,
+            "AH": 40.7,
+            "AO": 44.7
+          }
+        },
+        "saa27": {
+          "f1": 43.55,
+          "tAP": 0.4637,
+          "gAP": 0.2258,
+          "so_swap": 54,
+          "s2o": 45,
+          "o2s": 9,
+          "key_c_fpr": {
+            "DH": 25.8,
+            "Z": 51.5,
+            "AH": 23.3,
+            "AO": 4.3
+          }
+        },
+        "spont_h6": {
+          "f1": 64.13,
+          "tAP": 0.8191,
+          "gAP": 0.5103,
+          "so_swap": 60,
+          "s2o": 34,
+          "o2s": 26,
+          "key_c_fpr": {
+            "DH": 66.7,
+            "Z": 17.6,
+            "AH": 12.5,
+            "AO": 4.8
+          }
+        },
+        "timit_fa_utt": 0.401,
+        "timit_t_fa": 76,
+        "timit_g_fa": 1,
+        "timit_uw_fa": 2,
+        "timit_rare8_fa": 12,
+        "ctrl_rec": 93.55
+      }
+    },
+    "O1_timit_freq": {
+      "spec": {
+        "name": "O1_timit_freq",
+        "use_o1_timit_freq": true,
+        "tau_la": 0.0,
+        "phone_drop_p": 0.0,
+        "lambda_so_cond": 0.0
+      },
+      "best_epoch": 3,
+      "init_sha256": "3f5d0f99a5482dedaf21288ebb25246d749f63243638856c9dc468c61140075f",
+      "train_order_sha256": "c4a15315a0506887790f5243d9e695bad2d32277478ee5eaf8f9b2154824cf45",
+      "checkpoint_sha256": "78880ead988685d6ca4731673b498893dde33b154dbadfbfce515d1a1b5c3c87",
+      "seal_sha256": "c9bc3200473d204068eef1845e80fa2261c47aeedef7b6da68a7672e550731e3",
+      "wall_s": 0.0,
+      "cal": {
+        "cal_sel": 0.87362,
+        "cal_t_ap": 0.79907,
+        "cal_g_ap": 0.49697,
+        "cal_blind_ap": 0.21555,
+        "cal_l2_strict_f1": 67.74,
+        "cal_l1_fa_per_1k": 1.85,
+        "tau_t": 0.47,
+        "tau_g": 0.925
+      },
+      "history": [],
+      "pred_dir": "research/ORTHO_IMPROVEMENTS_20261122_v1/runs/cpu_ablation_s20261121/O1_timit_freq/eval_predictions",
+      "resumed": true,
+      "eval_native": {
+        "held6": {
+          "f1": 65.0,
+          "tAP": 0.7667,
+          "gAP": 0.5372,
+          "so_swap": 262,
+          "s2o": 143,
+          "o2s": 119,
+          "key_c_fpr": {
+            "DH": 66.1,
+            "Z": 39.7,
+            "AH": 4.3,
+            "AO": 6.4
+          }
+        },
+        "epadb_test": {
+          "f1": 67.4,
+          "tAP": 0.8081,
+          "gAP": 0.3466,
+          "so_swap": 211,
+          "s2o": 116,
+          "o2s": 95,
+          "key_c_fpr": {
+            "DH": 3.0,
+            "Z": 71.0,
+            "AH": 37.9,
+            "AO": 75.1
+          }
+        },
+        "saa27": {
+          "f1": 42.91,
+          "tAP": 0.4656,
+          "gAP": 0.2382,
+          "so_swap": 58,
+          "s2o": 49,
+          "o2s": 9,
+          "key_c_fpr": {
+            "DH": 25.8,
+            "Z": 57.3,
+            "AH": 18.6,
+            "AO": 13.6
+          }
+        },
+        "spont_h6": {
+          "f1": 64.25,
+          "tAP": 0.8157,
+          "gAP": 0.4646,
+          "so_swap": 59,
+          "s2o": 32,
+          "o2s": 27,
+          "key_c_fpr": {
+            "DH": 69.4,
+            "Z": 29.4,
+            "AH": 6.9,
+            "AO": 9.5
+          }
+        },
+        "timit_fa_utt": 0.844,
+        "timit_t_fa": 151,
+        "timit_g_fa": 11,
+        "timit_uw_fa": 6,
+        "timit_rare8_fa": 18,
+        "ctrl_rec": 96.06
+      },
+      "rm_tau_t": 0.4735,
+      "eval_cal_recall_matched": {
+        "held6": {
+          "f1": 65.05,
+          "tAP": 0.7667,
+          "gAP": 0.5372,
+          "so_swap": 261,
+          "s2o": 143,
+          "o2s": 118,
+          "key_c_fpr": {
+            "DH": 65.8,
+            "Z": 39.7,
+            "AH": 4.3,
+            "AO": 6.4
+          }
+        },
+        "epadb_test": {
+          "f1": 67.34,
+          "tAP": 0.8081,
+          "gAP": 0.3466,
+          "so_swap": 211,
+          "s2o": 116,
+          "o2s": 95,
+          "key_c_fpr": {
+            "DH": 3.0,
+            "Z": 71.0,
+            "AH": 37.7,
+            "AO": 74.5
+          }
+        },
+        "saa27": {
+          "f1": 42.86,
+          "tAP": 0.4656,
+          "gAP": 0.2382,
+          "so_swap": 58,
+          "s2o": 49,
+          "o2s": 9,
+          "key_c_fpr": {
+            "DH": 25.8,
+            "Z": 56.7,
+            "AH": 18.6,
+            "AO": 13.6
+          }
+        },
+        "spont_h6": {
+          "f1": 64.36,
+          "tAP": 0.8157,
+          "gAP": 0.4646,
+          "so_swap": 59,
+          "s2o": 32,
+          "o2s": 27,
+          "key_c_fpr": {
+            "DH": 69.4,
+            "Z": 29.4,
+            "AH": 6.2,
+            "AO": 9.5
+          }
+        },
+        "timit_fa_utt": 0.833,
+        "timit_t_fa": 149,
+        "timit_g_fa": 11,
+        "timit_uw_fa": 6,
+        "timit_rare8_fa": 18,
+        "ctrl_rec": 96.06
+      }
+    },
+    "O2_logit_adj": {
+      "spec": {
+        "name": "O2_logit_adj",
+        "use_o1_timit_freq": false,
+        "tau_la": 0.5,
+        "phone_drop_p": 0.0,
+        "lambda_so_cond": 0.0
+      },
+      "best_epoch": 4,
+      "init_sha256": "3f5d0f99a5482dedaf21288ebb25246d749f63243638856c9dc468c61140075f",
+      "train_order_sha256": "c4a15315a0506887790f5243d9e695bad2d32277478ee5eaf8f9b2154824cf45",
+      "checkpoint_sha256": "34bcd265f35e87989f4e68864fc18b6d57119f306fd8a4421643d20e93e1b12b",
+      "seal_sha256": "caa035c7a6d650e4610d390a3c3bb247c20f94f6ddd51ba44eca9ccecbc98af1",
+      "wall_s": 0.0,
+      "cal": {
+        "cal_sel": 0.85177,
+        "cal_t_ap": 0.77297,
+        "cal_g_ap": 0.52533,
+        "cal_blind_ap": 0.16726,
+        "cal_l2_strict_f1": 64.68,
+        "cal_l1_fa_per_1k": 3.44,
+        "tau_t": 0.6,
+        "tau_g": 0.775
+      },
+      "history": [],
+      "pred_dir": "research/ORTHO_IMPROVEMENTS_20261122_v1/runs/cpu_ablation_s20261121/O2_logit_adj/eval_predictions",
+      "resumed": true,
+      "eval_native": {
+        "held6": {
+          "f1": 62.03,
+          "tAP": 0.7553,
+          "gAP": 0.5249,
+          "so_swap": 371,
+          "s2o": 304,
+          "o2s": 67,
+          "key_c_fpr": {
+            "DH": 51.8,
+            "Z": 31.3,
+            "AH": 15.8,
+            "AO": 9.0
+          }
+        },
+        "epadb_test": {
+          "f1": 66.99,
+          "tAP": 0.8091,
+          "gAP": 0.383,
+          "so_swap": 294,
+          "s2o": 233,
+          "o2s": 61,
+          "key_c_fpr": {
+            "DH": 3.6,
+            "Z": 65.6,
+            "AH": 33.9,
+            "AO": 39.0
+          }
+        },
+        "saa27": {
+          "f1": 38.05,
+          "tAP": 0.4409,
+          "gAP": 0.2429,
+          "so_swap": 119,
+          "s2o": 116,
+          "o2s": 3,
+          "key_c_fpr": {
+            "DH": 22.5,
+            "Z": 50.9,
+            "AH": 33.9,
+            "AO": 15.0
+          }
+        },
+        "spont_h6": {
+          "f1": 62.6,
+          "tAP": 0.7951,
+          "gAP": 0.5966,
+          "so_swap": 70,
+          "s2o": 51,
+          "o2s": 19,
+          "key_c_fpr": {
+            "DH": 47.2,
+            "Z": 29.4,
+            "AH": 25.6,
+            "AO": 9.5
+          }
+        },
+        "timit_fa_utt": 1.406,
+        "timit_t_fa": 246,
+        "timit_g_fa": 24,
+        "timit_uw_fa": 20,
+        "timit_rare8_fa": 33,
+        "ctrl_rec": 98.21
+      },
+      "rm_tau_t": 0.5956,
+      "eval_cal_recall_matched": {
+        "held6": {
+          "f1": 61.87,
+          "tAP": 0.7553,
+          "gAP": 0.5249,
+          "so_swap": 374,
+          "s2o": 307,
+          "o2s": 67,
+          "key_c_fpr": {
+            "DH": 53.1,
+            "Z": 31.8,
+            "AH": 16.2,
+            "AO": 9.4
+          }
+        },
+        "epadb_test": {
+          "f1": 66.98,
+          "tAP": 0.8091,
+          "gAP": 0.383,
+          "so_swap": 295,
+          "s2o": 234,
+          "o2s": 61,
+          "key_c_fpr": {
+            "DH": 3.8,
+            "Z": 65.6,
+            "AH": 34.0,
+            "AO": 39.0
+          }
+        },
+        "saa27": {
+          "f1": 38.06,
+          "tAP": 0.4409,
+          "gAP": 0.2429,
+          "so_swap": 120,
+          "s2o": 117,
+          "o2s": 3,
+          "key_c_fpr": {
+            "DH": 22.5,
+            "Z": 51.5,
+            "AH": 34.2,
+            "AO": 15.7
+          }
+        },
+        "spont_h6": {
+          "f1": 62.28,
+          "tAP": 0.7951,
+          "gAP": 0.5966,
+          "so_swap": 70,
+          "s2o": 51,
+          "o2s": 19,
+          "key_c_fpr": {
+            "DH": 47.2,
+            "Z": 29.4,
+            "AH": 26.2,
+            "AO": 9.5
+          }
+        },
+        "timit_fa_utt": 1.417,
+        "timit_t_fa": 248,
+        "timit_g_fa": 24,
+        "timit_uw_fa": 20,
+        "timit_rare8_fa": 33,
+        "ctrl_rec": 98.21
+      }
+    },
+    "O2b_phone_drop": {
+      "spec": {
+        "name": "O2b_phone_drop",
+        "use_o1_timit_freq": false,
+        "tau_la": 0.0,
+        "phone_drop_p": 0.4,
+        "lambda_so_cond": 0.0
+      },
+      "best_epoch": 5,
+      "init_sha256": "3f5d0f99a5482dedaf21288ebb25246d749f63243638856c9dc468c61140075f",
+      "train_order_sha256": "c4a15315a0506887790f5243d9e695bad2d32277478ee5eaf8f9b2154824cf45",
+      "checkpoint_sha256": "80ff27eb107bf167723bbb6974893f441529939bcf9fb8892d241dd49da123f4",
+      "seal_sha256": "e0818f72023cc9bd97e00d16636ba5529e0d5536f251192cb7673ad34aadf817",
+      "wall_s": 293.6,
+      "cal": {
+        "cal_sel": 0.87953,
+        "cal_t_ap": 0.80195,
+        "cal_g_ap": 0.51721,
+        "cal_blind_ap": 0.21214,
+        "cal_l2_strict_f1": 68.27,
+        "cal_l1_fa_per_1k": 0.53,
+        "tau_t": 0.29,
+        "tau_g": 0.925
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.49005,
+          "cal_t_ap": 0.78839,
+          "cal_g_ap": 0.45724,
+          "sel": 0.85698,
+          "ep_s": 41.5
+        },
+        {
+          "epoch": 2,
+          "loss": 0.32833,
+          "cal_t_ap": 0.79014,
+          "cal_g_ap": 0.51407,
+          "sel": 0.86725,
+          "ep_s": 38.6
+        },
+        {
+          "epoch": 3,
+          "loss": 0.29935,
+          "cal_t_ap": 0.79929,
+          "cal_g_ap": 0.4676,
+          "sel": 0.86943,
+          "ep_s": 41.3
+        },
+        {
+          "epoch": 4,
+          "loss": 0.27504,
+          "cal_t_ap": 0.79618,
+          "cal_g_ap": 0.50592,
+          "sel": 0.87207,
+          "ep_s": 39.2
+        },
+        {
+          "epoch": 5,
+          "loss": 0.25668,
+          "cal_t_ap": 0.80195,
+          "cal_g_ap": 0.51721,
+          "sel": 0.87953,
+          "ep_s": 38.0
+        },
+        {
+          "epoch": 6,
+          "loss": 0.23842,
+          "cal_t_ap": 0.79881,
+          "cal_g_ap": 0.48242,
+          "sel": 0.87118,
+          "ep_s": 42.3
+        },
+        {
+          "epoch": 7,
+          "loss": 0.22364,
+          "cal_t_ap": 0.80159,
+          "cal_g_ap": 0.48588,
+          "sel": 0.87447,
+          "ep_s": 41.8
+        }
+      ],
+      "pred_dir": "research/ORTHO_IMPROVEMENTS_20261122_v1/runs/cpu_ablation_s20261121/O2b_phone_drop/eval_predictions",
+      "eval_native": {
+        "held6": {
+          "f1": 65.59,
+          "tAP": 0.7702,
+          "gAP": 0.5315,
+          "so_swap": 275,
+          "s2o": 146,
+          "o2s": 129,
+          "key_c_fpr": {
+            "DH": 62.9,
+            "Z": 34.9,
+            "AH": 8.9,
+            "AO": 6.0
+          }
+        },
+        "epadb_test": {
+          "f1": 67.91,
+          "tAP": 0.8124,
+          "gAP": 0.3422,
+          "so_swap": 196,
+          "s2o": 105,
+          "o2s": 91,
+          "key_c_fpr": {
+            "DH": 2.2,
+            "Z": 67.7,
+            "AH": 43.6,
+            "AO": 48.9
+          }
+        },
+        "saa27": {
+          "f1": 44.29,
+          "tAP": 0.4693,
+          "gAP": 0.252,
+          "so_swap": 61,
+          "s2o": 49,
+          "o2s": 12,
+          "key_c_fpr": {
+            "DH": 25.8,
+            "Z": 48.5,
+            "AH": 25.7,
+            "AO": 5.7
+          }
+        },
+        "spont_h6": {
+          "f1": 64.73,
+          "tAP": 0.8136,
+          "gAP": 0.5245,
+          "so_swap": 59,
+          "s2o": 31,
+          "o2s": 28,
+          "key_c_fpr": {
+            "DH": 69.4,
+            "Z": 23.5,
+            "AH": 15.6,
+            "AO": 9.5
+          }
+        },
+        "timit_fa_utt": 0.458,
+        "timit_t_fa": 80,
+        "timit_g_fa": 8,
+        "timit_uw_fa": 7,
+        "timit_rare8_fa": 16,
+        "ctrl_rec": 94.27
+      },
+      "rm_tau_t": 0.2852,
+      "eval_cal_recall_matched": {
+        "held6": {
+          "f1": 65.64,
+          "tAP": 0.7702,
+          "gAP": 0.5315,
+          "so_swap": 275,
+          "s2o": 146,
+          "o2s": 129,
+          "key_c_fpr": {
+            "DH": 62.9,
+            "Z": 35.2,
+            "AH": 9.2,
+            "AO": 6.0
+          }
+        },
+        "epadb_test": {
+          "f1": 67.88,
+          "tAP": 0.8124,
+          "gAP": 0.3422,
+          "so_swap": 196,
+          "s2o": 105,
+          "o2s": 91,
+          "key_c_fpr": {
+            "DH": 2.3,
+            "Z": 67.7,
+            "AH": 44.0,
+            "AO": 49.2
+          }
+        },
+        "saa27": {
+          "f1": 44.47,
+          "tAP": 0.4693,
+          "gAP": 0.252,
+          "so_swap": 61,
+          "s2o": 49,
+          "o2s": 12,
+          "key_c_fpr": {
+            "DH": 25.8,
+            "Z": 48.5,
+            "AH": 25.7,
+            "AO": 5.7
+          }
+        },
+        "spont_h6": {
+          "f1": 64.62,
+          "tAP": 0.8136,
+          "gAP": 0.5245,
+          "so_swap": 60,
+          "s2o": 32,
+          "o2s": 28,
+          "key_c_fpr": {
+            "DH": 69.4,
+            "Z": 23.5,
+            "AH": 15.6,
+            "AO": 9.5
+          }
+        },
+        "timit_fa_utt": 0.464,
+        "timit_t_fa": 81,
+        "timit_g_fa": 8,
+        "timit_uw_fa": 7,
+        "timit_rare8_fa": 16,
+        "ctrl_rec": 94.27
+      }
+    },
+    "O3_cond_so": {
+      "spec": {
+        "name": "O3_cond_so",
+        "use_o1_timit_freq": false,
+        "tau_la": 0.0,
+        "phone_drop_p": 0.0,
+        "lambda_so_cond": 0.5
+      },
+      "best_epoch": 5,
+      "init_sha256": "3f5d0f99a5482dedaf21288ebb25246d749f63243638856c9dc468c61140075f",
+      "train_order_sha256": "c4a15315a0506887790f5243d9e695bad2d32277478ee5eaf8f9b2154824cf45",
+      "checkpoint_sha256": "6b359a7bbd8fd3cb619587b1fc194e14761c1d04d7a9157aeb4aab2926ef5bc2",
+      "seal_sha256": "9b3ef1b481c95a304f8ef61613c2644f738f0a4b41e1b167e63ae0b1ebd80d4c",
+      "wall_s": 299.6,
+      "cal": {
+        "cal_sel": 0.87659,
+        "cal_t_ap": 0.79649,
+        "cal_g_ap": 0.534,
+        "cal_blind_ap": 0.20248,
+        "cal_l2_strict_f1": 67.81,
+        "cal_l1_fa_per_1k": 0.53,
+        "tau_t": 0.32,
+        "tau_g": 0.9
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "loss": 0.60979,
+          "cal_t_ap": 0.78227,
+          "cal_g_ap": 0.47131,
+          "sel": 0.85296,
+          "ep_s": 40.0
+        },
+        {
+          "epoch": 2,
+          "loss": 0.40489,
+          "cal_t_ap": 0.79115,
+          "cal_g_ap": 0.48312,
+          "sel": 0.86361,
+          "ep_s": 40.0
+        },
+        {
+          "epoch": 3,
+          "loss": 0.36313,
+          "cal_t_ap": 0.79654,
+          "cal_g_ap": 0.4994,
+          "sel": 0.87145,
+          "ep_s": 39.4
+        },
+        {
+          "epoch": 4,
+          "loss": 0.33035,
+          "cal_t_ap": 0.79586,
+          "cal_g_ap": 0.52138,
+          "sel": 0.87406,
+          "ep_s": 41.0
+        },
+        {
+          "epoch": 5,
+          "loss": 0.30727,
+          "cal_t_ap": 0.79649,
+          "cal_g_ap": 0.534,
+          "sel": 0.87659,
+          "ep_s": 42.8
+        },
+        {
+          "epoch": 6,
+          "loss": 0.28043,
+          "cal_t_ap": 0.79202,
+          "cal_g_ap": 0.52344,
+          "sel": 0.87054,
+          "ep_s": 44.1
+        },
+        {
+          "epoch": 7,
+          "loss": 0.26138,
+          "cal_t_ap": 0.79948,
+          "cal_g_ap": 0.48229,
+          "sel": 0.87182,
+          "ep_s": 41.2
+        }
+      ],
+      "pred_dir": "research/ORTHO_IMPROVEMENTS_20261122_v1/runs/cpu_ablation_s20261121/O3_cond_so/eval_predictions",
+      "eval_native": {
+        "held6": {
+          "f1": 65.83,
+          "tAP": 0.7729,
+          "gAP": 0.5458,
+          "so_swap": 263,
+          "s2o": 149,
+          "o2s": 114,
+          "key_c_fpr": {
+            "DH": 61.6,
+            "Z": 29.9,
+            "AH": 5.3,
+            "AO": 3.9
+          }
+        },
+        "epadb_test": {
+          "f1": 69.37,
+          "tAP": 0.8187,
+          "gAP": 0.3553,
+          "so_swap": 175,
+          "s2o": 90,
+          "o2s": 85,
+          "key_c_fpr": {
+            "DH": 2.8,
+            "Z": 67.7,
+            "AH": 38.5,
+            "AO": 42.9
+          }
+        },
+        "saa27": {
+          "f1": 43.23,
+          "tAP": 0.4628,
+          "gAP": 0.225,
+          "so_swap": 55,
+          "s2o": 47,
+          "o2s": 8,
+          "key_c_fpr": {
+            "DH": 23.6,
+            "Z": 47.4,
+            "AH": 18.6,
+            "AO": 3.6
+          }
+        },
+        "spont_h6": {
+          "f1": 64.04,
+          "tAP": 0.8141,
+          "gAP": 0.6048,
+          "so_swap": 61,
+          "s2o": 32,
+          "o2s": 29,
+          "key_c_fpr": {
+            "DH": 58.3,
+            "Z": 17.6,
+            "AH": 8.1,
+            "AO": 9.5
+          }
+        },
+        "timit_fa_utt": 0.583,
+        "timit_t_fa": 108,
+        "timit_g_fa": 4,
+        "timit_uw_fa": 12,
+        "timit_rare8_fa": 25,
+        "ctrl_rec": 96.42
+      },
+      "rm_tau_t": 0.2585,
+      "eval_cal_recall_matched": {
+        "held6": {
+          "f1": 65.71,
+          "tAP": 0.7729,
+          "gAP": 0.5458,
+          "so_swap": 275,
+          "s2o": 158,
+          "o2s": 117,
+          "key_c_fpr": {
+            "DH": 66.4,
+            "Z": 34.4,
+            "AH": 7.4,
+            "AO": 5.1
+          }
+        },
+        "epadb_test": {
+          "f1": 69.21,
+          "tAP": 0.8187,
+          "gAP": 0.3553,
+          "so_swap": 177,
+          "s2o": 92,
+          "o2s": 85,
+          "key_c_fpr": {
+            "DH": 3.4,
+            "Z": 72.0,
+            "AH": 42.5,
+            "AO": 48.6
+          }
+        },
+        "saa27": {
+          "f1": 43.65,
+          "tAP": 0.4628,
+          "gAP": 0.225,
+          "so_swap": 60,
+          "s2o": 51,
+          "o2s": 9,
+          "key_c_fpr": {
+            "DH": 27.0,
+            "Z": 52.0,
+            "AH": 23.0,
+            "AO": 5.0
+          }
+        },
+        "spont_h6": {
+          "f1": 64.81,
+          "tAP": 0.8141,
+          "gAP": 0.6048,
+          "so_swap": 63,
+          "s2o": 33,
+          "o2s": 30,
+          "key_c_fpr": {
+            "DH": 63.9,
+            "Z": 17.6,
+            "AH": 11.9,
+            "AO": 9.5
+          }
+        },
+        "timit_fa_utt": 0.656,
+        "timit_t_fa": 122,
+        "timit_g_fa": 4,
+        "timit_uw_fa": 12,
+        "timit_rare8_fa": 27,
+        "ctrl_rec": 96.42
+      }
+    }
+  }
+}

@@ -1,5 +1,62 @@
 # Research decisions
 
+## 2026-11-22 — Đóng nhánh `SpeechOcean762 TRAIN` (`NO_GO`); khóa `deploy/koel_ens3_mdd/bundle_s0_clean_ens3_o5_o4.pt` làm engine suy luận nghiên cứu chuẩn trên `clean_11`
+
+- **Loại bỏ `SpeechOcean762 TRAIN` (`REAL_L2_SO762_20261122_v1`):** Cả 3 biến thể (`strict_all`, `adult_only`, `soft_all`) trên 3 seed ghép cặp đều giảm Held-6 (`-0,24..-0,40 pp`), tụt nặng `SAA-27` (`-2,27..-7,43 pp`) và `Spont H6` (`-1,07..-2,66 pp`, `0/3` seed) dù nhích nhẹ `tAP` đọc ngắn; nguyên nhân là lệch tỷ lệ `C` (`80%`) và độ dài câu đọc ngắn 1 L1 tiếng Trung.
+- **Khóa bundle suy luận sạch `clean_11`:** [`deploy/koel_ens3_mdd/bundle_s0_clean_ens3_o5_o4.pt`](../deploy/koel_ens3_mdd/bundle_s0_clean_ens3_o5_o4.pt) (`15,94 MiB`, SHA `44a97828…`) + [`KoelEns3MDDEngine`](../deploy/koel_ens3_mdd/engine.py) (`997/997` raw-WAV parity `<=1,02e-6`, GTX 1650 E2E P50 `155,8 ms`, `1.646 MiB` VRAM). Giữ nguyên checkpoint lịch sử, `GOAL.md`, và `test_sealed` đóng; mọi cải tiến tiếp theo cần dữ liệu người Việt có nhãn người thật (`EXP-6`) và nghe mù `S_same`.
+
+## 2026-11-22 — Chốt `S0_clean_ens3_o5_o4` làm mốc `clean_11` mạnh nhất; đóng `FIT_ONLY_PATCH` (`NO_GO`) và `O3_cond_so` (`NO_GO` promote chung)
+
+Từ [kết quả Task 1 & 2](EXPERIMENTS.md#2026-11-22--đóng-gói-s0_clean_ens3_o5_o4-task-1--xác-nhận-gpu-3-seed-fit_only_patch--o3_cond_so-task-2):
+- **Chấp nhận (`GO` nghiên cứu trên `clean_11`):** **`S0_clean_ens3_o5_o4`** (3-seed Head Ensemble `prob_mean` + Gap Platt, khóa thuần trên Cal với guard L1 `≤1,0/1k`) — tăng đồng loạt `Held-6 +0,92 pp`, `EpaDB +0,45 pp`, `SAA-27 +0,87 pp`, `Spont H6 +0,15 pp`, giảm `TIMIT FA 0,578→0,562/câu`, tăng `Ctrl Recall 95,82→97,13%` với phụ trội chỉ `+6,72 ms` GPU head.
+- **Đóng (`NO_GO`):** `F1_fit_patch` (sửa `197` `realized_id` lỗi DP không tăng MDD F1: `Held-6 −0,24 pp`, `TIMIT +0,025/câu`) và `O3_cond_so` (`λ=0,25/0,50` chỉ giúp EpaDB `+0,34 pp` nhưng làm xấu `Spont H6` và `TIMIT FA`, và ở `ens3` thua `F0 ens3` trên 3/4 tập L2 + TIMIT).
+- **Chuyển trọng tâm dứt điểm:** Dừng tối ưu kiến trúc/loss/backbone trên 37 người Fit cũ; bước tiếp theo là nghe mù `S_same` và thu/nhập dữ liệu L2 thật có nhãn (`EXP-6` câu ngắn VN). Giữ nguyên checkpoint lịch sử, `GOAL.md`, và `test_sealed` đóng.
+
+## 2026-11-22 — Giữ `S0_clean` làm đối chứng; không promote backbone nào từ `full_clean11_v1`
+
+[Run đã đối soát](BACKBONE_REP_CAMPAIGN_20261122_v1/runs/full_clean11_v1/RESULTS.json): Base+ qua probe khe nhưng sáu ứng viên train đều không qua cổng Cal. Giữ closeout `NO_GO` cho các cấu hình đã thử, không chạy 2 seed xác nhận hay chọn lại theo Eval. C2 có lợi riêng SAA-27 ở 1 seed nhưng đánh đổi Held-6 và false alarm bản ngữ. Không thay checkpoint lịch sử hay mở `test_sealed`.
+
+## 2026-11-22 — Loại bỏ `O1_timit_freq`, `O2_logit_adj`, `O3-cal (rho_o)` sau thực nghiệm đối chứng CPU; giữ `O5` (3-seed ensemble)
+
+Từ [thực nghiệm đối chứng CPU trực tiếp](EXPERIMENTS.md#2026-11-22--thực-nghiệm-đối-chứng-cpu-trực-tiếp-cho-ortho_improvements_20261122_v1-o1o2o3-cal-no_go-o5-go-o3_cond_soo2b-mixed):
+- **Bác bỏ (`NO_GO`):** `O1_timit_freq` (TIMIT FA tăng gấp đôi `0,401→0,844/câu`, tụt Held-6/EpaDB/SAA-27 do làm yếu neo sạch L1 ở âm phổ biến), `O2_logit_adj` (tụt toàn bộ 4 tập L2 tới `-5,45 pp` trên SAA-27 và TIMIT `3,5×` tệ hơn), và `O3-cal` sweep `rho_o` trên Cal (overfit Cal, tụt Held-6/SAA-27).
+- **Giữ làm công cụ chuẩn cho vòng sau:** **`O5` (3-seed Head Ensemble trên 1 lượt forward backbone, kèm guard L1 Cal chặt)** — cải thiện đồng đều L2 (`+0,2..+1,0 pp`, `I F1 +1..+2,8 pp`) và `Ctrl Recall +0,95 pp` với `<2 ms` phụ trội; `O4` (`Gap Platt`) chỉ dùng khi cần xác suất `P(I)` đã hiệu chỉnh (trung tính với F1).
+- **Chưa chốt (chỉ 1 seed có đánh đổi):** `O3_cond_so` (giảm `S↔O` EpaDB `-12%`, EpaDB `+0,84 pp`, `Ctrl 93,55→96,42%` nhưng TIMIT `0,401→0,583/câu`) và `O2b_phone_drop` (tăng SAA-27 `+0,79 pp` / Spont H6 `+0,60 pp` nhưng tụt EpaDB `-0,62 pp`). Không thay đổi gì trong worker GPU `full_clean11_v1` đang chạy.
+
+## 2026-11-22 — Giữ nguyên campaign; cô lập lỗi ID phụ sau khi hoàn tất
+
+[Hậu kiểm checkpoint](BACKBONE_CHECKPOINT_AUTOPSY_20261122_v1/DIAGNOSIS_VI.md) xác nhận nhãn MDD L2-ARCTIC khớp bản ghi theo slot nhưng DP tạo `197` ID phụ sai trong Fit. [Bản sửa chỉ Fit](BACKBONE_CHECKPOINT_AUTOPSY_20261122_v1/supervision/FIT_ONLY_PATCH.json) chưa áp dụng. Vòng sau so đối chứng chỉ thay các ID này; giữ `S` khi realized và canonical trùng mã, không tự gán lại `C`. Không đổi ngưỡng, cổng hay source/checkpoint của worker hiện tại: chưa có bằng chứng nhân quả rằng sửa ID sẽ tăng F1.
+
+## 2026-11-22 — `full_clean11_v1`: chỉ đưa Base+ sang DualRep và frame attention
+
+Áp dụng nguyên cổng Cal đã khóa: WavLM-Base+ đạt qua gap AP (`+0,02504`, yêu cầu `+0,02`), không nhờ target. Ba encoder khác không đạt; không xếp nhánh hạng hai thay thế, nên bỏ A2/A4. Quyết định không loại LoRA WavLM-Large ở Stage 4 (giả thuyết khác) và không promote model. [Đối soát](EXPERIMENTS.md).
+
+## 2026-11-22 — Chạy backbone với roster `clean_11`, không hạ cổng để lấp thời gian GPU
+
+Theo xác nhận người dùng, giữ duy nhất `clean_11` và ba snapshot đã tải cùng HuPER/CharSiu cục bộ. Stage 1 chỉ đưa encoder qua cổng Cal sang DualRep/frame-attention; chạy WavLM-Large LoRA direct vs warm như giả thuyết độc lập, fallback Base+ chỉ do VRAM trước khi train; nếu distill thì có Base+ no-KD cùng seed. Không coi 1-frame CTC span là bằng chứng hidden state mất thông tin; không báo PER bất biến như một phép đo mới. Kết quả lịch sử chỉ chẩn đoán, đủ seal/threshold Cal mới ghép Eval. [Giao thức](BACKBONE_REP_CAMPAIGN_20261122_v1/PROTOCOL_VI.md).
+
+## 2026-11-22 — Đóng nhánh Synthetic S1/S2/S3 trên frozen Koel Base (không chạy pilot `S1-I`), chuyển trọng tâm khỏi dữ liệu yếu hiện tại
+
+Theo quyết định người dùng sau khi đối chiếu thêm số liệu gốc (`ACOUSTIC_REALISM_GATE.json`, `ADMISSION_RECHECK.json`, `CONFIRM_3SEED_RESULTS.json`, `PROPOSED_BASELINE.json`):
+- **Dừng toàn bộ 3 nhánh Synthetic `S1/S2/S3` và không chạy pilot `S1-I`:** S0 hiện tại đã có `897` slot `I` từ `timit_train_l1_antishortcut` (`gap_dur W1 = 1,76`, sát Fit L2 hơn `S1-I` `W1 = 3,51` vốn bị cắt `max_ins_span=3`), trong khi `I` chỉ chiếm `5,3%` lỗi `Held-6` (`I F1 61,5%`) và `6,1%` `EpaDB` (trần tác động lên strict F1 tổng rất nhỏ). Cả `S1` (`can_lp -8,96`), `S2` (`-7,30`) và `S3` (`-8,25`, chỉ bắt `5,4%–10,8%` lỗi `S` Fit khi đồng thuận) đều không tạo được vùng âm học L2 trung gian (`can_lp -1,68`).
+- **Bảo toàn mốc lịch sử & holdout:** Giữ nguyên checkpoint `seq_mdd_v2_1_fix1_iso_no_hwin_seed20261122.pt` (`aef0d8a`, SHA `91dc67fe…`), V2 gốc (`a9bb69ed…`), `GOAL.md`, và `test_sealed` chưa mở. Không chạy train 3 seed hay chấm Eval thêm cho `SYNTH_3DIR_ISO_V1_20261122`. Lưu ý: nếu mở hướng train mới vẫn tuân thủ quy chế holdout chéo repo `test_sealed` thì cần khóa lại split sạch 11 người L2-ARCTIC trước khi train.
+- **Hướng ưu tiên tiếp theo:** Tập trung vào **dữ liệu L2 thật có nhãn mới (`EXP-6` câu ngắn người Việt)** hoặc **nâng cấp biểu diễn âm học / hướng mô hình ở cấp backbone**, thay vì tinh chỉnh head hoặc sinh dữ liệu yếu trên frozen Koel Base.
+
+## 2026-11-22 — Giữ phán quyết sau replay và sensitivity
+
+[Đối soát](SYNTH_3DIR_ISO_V1_20261122/run_v2/ADMISSION_RECHECK.json) xác nhận lỗi S/O S1 còn lệch khi tính lại toàn Fit và thử trần W1 2×; bỏ lọc độ tin cậy S2 không đủ số cặp. S3 có thể tăng số câu nếu nới, nhưng không đạt đối chứng nhãn O/I Fit. Các ngưỡng là quy tắc QC cho công thức hiện tại, không phải bằng chứng mọi nhánh không thể học. Không mở Eval để cứu cổng; nếu thử tiếp, đăng ký một pilot S1-I riêng và mốc sạch.
+
+## 2026-11-22 — Không launch 3 seed với S0 cũ hoặc ba công thức dữ liệu yếu hiện tại
+
+- [Audit roster](SYNTH_3DIR_ISO_V1_20261122/run_v2/gates/BASELINE_CUSTODY_AUDIT.json) phát hiện `330` câu Fit và `20` Eval Spontaneous trùng **người nói** với danh sách công khai `test_sealed`. Không kết luận trùng từng WAV; không mở manifest niêm phong. Giữ mốc `aef0d8a` cho nghiên cứu lịch sử, không ghi đè. Mốc tiếp theo phải khóa split sạch mới, không dùng smoke như checkpoint mới, không thêm LoRA từ kết quả này.
+- [Admission](SYNTH_3DIR_ISO_V1_20261122/run_v2/gates/TECHNICAL_ADMISSION.json): S1 không đạt realism S/O, S2 sham tốt nhưng thấp độ phủ sau xác minh, S3 không đủ coverage và precision O/I. Không hạ ngưỡng, bỏ cổng nghe mù hay chạy bảng Eval để chọn nhánh. Ưu tiên thí nghiệm hẹp S1-I hoặc S1-S khó nếu tiếp tục; tách O và không dùng consensus làm gold. Bản chạy dữ liệu này chỉ để chẩn đoán.
+
+## 2026-11-21 — Chốt kế hoạch thử nghiệm 3 hướng Synthetic/Semi-Supervised đánh giá 1 lượt cho phiên mới (`PLAN_ONLY`)
+
+Do chưa có dữ liệu L2 gán nhãn mới và tinh chỉnh head thêm trên 41 người nói cũ đã bão hòa, ghi nhận [kế hoạch 3 hướng `S1/S2/S3` đánh giá 1 lượt trên mốc `iso_no_hwin` (`aef0d8a`)](EXPERIMENTS.md#2026-11-21--kế-hoạch-mở-rộng-synthetic-3-hướng--đánh-giá-1-lượt-trên-iso_no_hwin-plan_only--bàn-giao-phiên-mới):
+- Bắt buộc kiểm tra **4 cổng chống thất bại** (Fit-only zero leakage, Acoustic Realism Gate trước train, nghe mù 20–30 mẫu HTML, đối chứng 3 seed ghép cặp gồm cả Cal L2 Recall-Matched & TIMIT FA guard) trước khi nhân rộng bất kỳ nhánh Synthetic nào.
+- Không sửa checkpoint đã lưu (`aef0d8a`, `a9bb69ed…`), `GOAL.md`, hay mở `test_sealed`.
+
 ## 2026-11-21 — Lưu & chọn `seq_mdd_v2_1_fix1_iso_no_hwin_seed20261122.pt` làm mốc nghiên cứu frozen-Koel mới (giữ nguyên V2 gốc trong archive)
 
 Theo chỉ thị người dùng sau [xác nhận 3 seed ghép cặp `confirm_fix1_3seed_20261121_v1`](SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/confirm_fix1_3seed_20261121_v1/CONFIRM_3SEED_RESULTS.json):

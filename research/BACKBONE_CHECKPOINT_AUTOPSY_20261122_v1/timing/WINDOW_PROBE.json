@@ -1,0 +1,285 @@
+{
+  "scope": "Post hoc matched window probe, L2-ARCTIC C/S only; diagnostic reference timing, not deployable",
+  "run_binding_sha256": "ec082d3907f8c6b9d0b63d2f7d26e0f3aae39babc94230f369d038fb6257689c",
+  "code_sha256": "9a4eaece5bfff975335f33f91fe60ba437afae49be420d031b88da70f4f70704",
+  "reference_rows_sha256": "83451563085d1dfc71a7cd19d59886b301005e81f3339c32d316010a4161e0d6",
+  "sklearn": "1.9.1",
+  "layer": 8,
+  "alpha": 1000,
+  "receipt": {
+    "fit": {
+      "utts": 1042,
+      "slots": 33662,
+      "S": 3566,
+      "frames_L8_sha": "9e707a2b9d9f1e6bb5f7db2d3f21e061982bf44ed4414ce7ae647fca26dd4866",
+      "checked_voronoi_max_abs": 0.00146484375,
+      "fallbacks": {
+        "charsiu": 485,
+        "reference": 3
+      }
+    },
+    "cal": {
+      "utts": 260,
+      "slots": 8472,
+      "S": 1066,
+      "frames_L8_sha": "8f19350934bc1430d0323fb7000f32b91ddde8d998f9f6bfc7796404819f48a3",
+      "checked_voronoi_max_abs": 0.0011718273162841797,
+      "fallbacks": {
+        "charsiu": 119,
+        "reference": 1
+      }
+    }
+  },
+  "cal": {
+    "koel_only": {
+      "all": {
+        "slots": 8472,
+        "pos": 1066,
+        "prevalence": 0.12582625118035884,
+        "ap": 0.6005254998353402
+      },
+      "blind": {
+        "slots": 6777,
+        "pos": 313,
+        "prevalence": 0.04618562785893463,
+        "ap": 0.13692598815646895
+      },
+      "nonblind": {
+        "slots": 1695,
+        "pos": 753,
+        "prevalence": 0.44424778761061945,
+        "ap": 0.719930643836193
+      },
+      "same_vs_C": {
+        "slots": 7676,
+        "pos": 270,
+        "prevalence": 0.035174570088587806,
+        "ap": 0.06939805920734442
+      },
+      "alternate_vs_C": {
+        "slots": 8202,
+        "pos": 796,
+        "prevalence": 0.09704950012192148,
+        "ap": 0.6649203743379758
+      },
+      "ERMS": {
+        "slots": 2630,
+        "pos": 429,
+        "prevalence": 0.16311787072243347,
+        "ap": 0.7785803540153562
+      },
+      "SVBI": {
+        "slots": 3036,
+        "pos": 447,
+        "prevalence": 0.14723320158102768,
+        "ap": 0.5148075605525325
+      },
+      "YBAA": {
+        "slots": 2806,
+        "pos": 190,
+        "prevalence": 0.06771204561653599,
+        "ap": 0.4641197321687195
+      }
+    },
+    "voronoi": {
+      "all": {
+        "slots": 8472,
+        "pos": 1066,
+        "prevalence": 0.12582625118035884,
+        "ap": 0.5939552038588584
+      },
+      "blind": {
+        "slots": 6777,
+        "pos": 313,
+        "prevalence": 0.04618562785893463,
+        "ap": 0.1322390145462734
+      },
+      "nonblind": {
+        "slots": 1695,
+        "pos": 753,
+        "prevalence": 0.44424778761061945,
+        "ap": 0.7151421477338873
+      },
+      "same_vs_C": {
+        "slots": 7676,
+        "pos": 270,
+        "prevalence": 0.035174570088587806,
+        "ap": 0.06869040044952238
+      },
+      "alternate_vs_C": {
+        "slots": 8202,
+        "pos": 796,
+        "prevalence": 0.09704950012192148,
+        "ap": 0.6569481897160836
+      },
+      "ERMS": {
+        "slots": 2630,
+        "pos": 429,
+        "prevalence": 0.16311787072243347,
+        "ap": 0.771393136564036
+      },
+      "SVBI": {
+        "slots": 3036,
+        "pos": 447,
+        "prevalence": 0.14723320158102768,
+        "ap": 0.5057836412349049
+      },
+      "YBAA": {
+        "slots": 2806,
+        "pos": 190,
+        "prevalence": 0.06771204561653599,
+        "ap": 0.4580963431038136
+      }
+    },
+    "charsiu": {
+      "all": {
+        "slots": 8472,
+        "pos": 1066,
+        "prevalence": 0.12582625118035884,
+        "ap": 0.5949995904659908
+      },
+      "blind": {
+        "slots": 6777,
+        "pos": 313,
+        "prevalence": 0.04618562785893463,
+        "ap": 0.13216564815647427
+      },
+      "nonblind": {
+        "slots": 1695,
+        "pos": 753,
+        "prevalence": 0.44424778761061945,
+        "ap": 0.7156864691070791
+      },
+      "same_vs_C": {
+        "slots": 7676,
+        "pos": 270,
+        "prevalence": 0.035174570088587806,
+        "ap": 0.06783259839817742
+      },
+      "alternate_vs_C": {
+        "slots": 8202,
+        "pos": 796,
+        "prevalence": 0.09704950012192148,
+        "ap": 0.6591950389365314
+      },
+      "ERMS": {
+        "slots": 2630,
+        "pos": 429,
+        "prevalence": 0.16311787072243347,
+        "ap": 0.7720920995098082
+      },
+      "SVBI": {
+        "slots": 3036,
+        "pos": 447,
+        "prevalence": 0.14723320158102768,
+        "ap": 0.501613481108178
+      },
+      "YBAA": {
+        "slots": 2806,
+        "pos": 190,
+        "prevalence": 0.06771204561653599,
+        "ap": 0.46042052144972173
+      }
+    },
+    "reference": {
+      "all": {
+        "slots": 8472,
+        "pos": 1066,
+        "prevalence": 0.12582625118035884,
+        "ap": 0.5926300723654712
+      },
+      "blind": {
+        "slots": 6777,
+        "pos": 313,
+        "prevalence": 0.04618562785893463,
+        "ap": 0.12948109992942927
+      },
+      "nonblind": {
+        "slots": 1695,
+        "pos": 753,
+        "prevalence": 0.44424778761061945,
+        "ap": 0.7140913143878991
+      },
+      "same_vs_C": {
+        "slots": 7676,
+        "pos": 270,
+        "prevalence": 0.035174570088587806,
+        "ap": 0.06754122684438613
+      },
+      "alternate_vs_C": {
+        "slots": 8202,
+        "pos": 796,
+        "prevalence": 0.09704950012192148,
+        "ap": 0.6563124818670153
+      },
+      "ERMS": {
+        "slots": 2630,
+        "pos": 429,
+        "prevalence": 0.16311787072243347,
+        "ap": 0.7675057089557328
+      },
+      "SVBI": {
+        "slots": 3036,
+        "pos": 447,
+        "prevalence": 0.14723320158102768,
+        "ap": 0.5034688602946857
+      },
+      "YBAA": {
+        "slots": 2806,
+        "pos": 190,
+        "prevalence": 0.06771204561653599,
+        "ap": 0.4570822712566026
+      }
+    },
+    "permuted": {
+      "all": {
+        "slots": 8472,
+        "pos": 1066,
+        "prevalence": 0.12582625118035884,
+        "ap": 0.6025531520461765
+      },
+      "blind": {
+        "slots": 6777,
+        "pos": 313,
+        "prevalence": 0.04618562785893463,
+        "ap": 0.13479801326733246
+      },
+      "nonblind": {
+        "slots": 1695,
+        "pos": 753,
+        "prevalence": 0.44424778761061945,
+        "ap": 0.7252411641560009
+      },
+      "same_vs_C": {
+        "slots": 7676,
+        "pos": 270,
+        "prevalence": 0.035174570088587806,
+        "ap": 0.06902551448047048
+      },
+      "alternate_vs_C": {
+        "slots": 8202,
+        "pos": 796,
+        "prevalence": 0.09704950012192148,
+        "ap": 0.6679808237285229
+      },
+      "ERMS": {
+        "slots": 2630,
+        "pos": 429,
+        "prevalence": 0.16311787072243347,
+        "ap": 0.7715655830890766
+      },
+      "SVBI": {
+        "slots": 3036,
+        "pos": 447,
+        "prevalence": 0.14723320158102768,
+        "ap": 0.5216036456411436
+      },
+      "YBAA": {
+        "slots": 2806,
+        "pos": 190,
+        "prevalence": 0.06771204561653599,
+        "ap": 0.46755934732684146
+      }
+    }
+  }
+}

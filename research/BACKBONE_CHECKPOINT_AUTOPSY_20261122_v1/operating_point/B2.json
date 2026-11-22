@@ -1,0 +1,28 @@
+{
+  "scope": "optimistic same-Cal two-scalar-threshold envelope only; no output policy",
+  "binding_sha": "ec082d3907f8c6b9d0b63d2f7d26e0f3aae39babc94230f369d038fb6257689c",
+  "code_sha": "ec5911daca6e3739b8a93de77f381fde8b8ff810d8475e5bebbdbc279d775845",
+  "cal_counts": {
+    "targets": 12663,
+    "gaps": 13320,
+    "positives": 2384
+  },
+  "results": {
+    "B2": {
+      "ckpt_sha": "b7390081b3bdf7a433f8ff292adb6fa499df032bdba2aa41faf6bd78b0ef62f8",
+      "cal_arrays_sha": "80e1f81b04fdc0960047147762aa880c543803a68cdd7c42c35c06ea259ed2c1",
+      "locked_f1": 0.6693720632208457,
+      "best_on_Cal": {
+        "strict_f1": 0.6702195693881902,
+        "tp_fp_fn": [
+          1572,
+          735,
+          812
+        ]
+      },
+      "possible_tie_positive_count": 1,
+      "optimistic_if_close_type_flips": 0.6702195693881902,
+      "headroom_pp": 0.0847506167344414
+    }
+  }
+}

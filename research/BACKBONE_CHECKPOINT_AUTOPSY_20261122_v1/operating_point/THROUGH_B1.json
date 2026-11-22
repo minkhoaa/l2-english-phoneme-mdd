@@ -1,0 +1,108 @@
+{
+  "scope": "optimistic same-Cal two-scalar-threshold envelope only; no output policy",
+  "binding_sha": "ec082d3907f8c6b9d0b63d2f7d26e0f3aae39babc94230f369d038fb6257689c",
+  "code_sha": "ec5911daca6e3739b8a93de77f381fde8b8ff810d8475e5bebbdbc279d775845",
+  "cal_counts": {
+    "targets": 12663,
+    "gaps": 13320,
+    "positives": 2384
+  },
+  "results": {
+    "S0_20261121": {
+      "ckpt_sha": "91af44030de6b1ada7ddf153d7bed1d3f0d43ba9a687d39b86b20858ed2ec5fe",
+      "cal_arrays_sha": "66ab95ccfb47b9da3b3651081133979046a716a904de2467b8df01aaeafce33b",
+      "locked_f1": 0.6781609195402298,
+      "best_on_Cal": {
+        "strict_f1": 0.6785714285714286,
+        "tp_fp_fn": [
+          1653,
+          835,
+          731
+        ]
+      },
+      "possible_tie_positive_count": 0,
+      "optimistic_if_close_type_flips": 0.6785714285714286,
+      "headroom_pp": 0.041050903119876914
+    },
+    "S0_20261122": {
+      "ckpt_sha": "02fc2acf20f42c885a1867f41d5f7fb419a031f750c4dcdf41d6818db1eac6d1",
+      "cal_arrays_sha": "b91e092d9f09fb1e34ea5ca86ef81c29321735817d3142d4e49131b9dc4803e1",
+      "locked_f1": 0.6853544586634166,
+      "best_on_Cal": {
+        "strict_f1": 0.6860254083484574,
+        "tp_fp_fn": [
+          1701,
+          874,
+          683
+        ]
+      },
+      "possible_tie_positive_count": 0,
+      "optimistic_if_close_type_flips": 0.6860254083484574,
+      "headroom_pp": 0.06709496850407781
+    },
+    "S0_20261123": {
+      "ckpt_sha": "6679cf4aca7923b7cdc2ea68824f6c80e48fdb890999a06bb149716df56ea33c",
+      "cal_arrays_sha": "d4f64285fb0156d5bdf8316f581f141264834bd587832f684d832ce091148cf4",
+      "locked_f1": 0.6810082572794437,
+      "best_on_Cal": {
+        "strict_f1": 0.6815909584872853,
+        "tp_fp_fn": [
+          1568,
+          649,
+          816
+        ]
+      },
+      "possible_tie_positive_count": 0,
+      "optimistic_if_close_type_flips": 0.6815909584872853,
+      "headroom_pp": 0.05827012078416516
+    },
+    "A1": {
+      "ckpt_sha": "ca50ac6efa01d82dea069030a987b7f34c6fd16ad47d75e2b76e56c89a1a0930",
+      "cal_arrays_sha": "5371c533da36bf904daeba0c5c6a9013b394ea24c40a40c31ae9a9eea6414e50",
+      "locked_f1": 0.6756972111553785,
+      "best_on_Cal": {
+        "strict_f1": 0.6764292878635908,
+        "tp_fp_fn": [
+          1686,
+          915,
+          698
+        ]
+      },
+      "possible_tie_positive_count": 0,
+      "optimistic_if_close_type_flips": 0.6764292878635908,
+      "headroom_pp": 0.07320767082122925
+    },
+    "A3": {
+      "ckpt_sha": "0fccb3f4e85066a318b2eddf8a092c2e4f0de0207f9d6a21022aaea38a0fd4ed",
+      "cal_arrays_sha": "10ffdba72a89effb43c6f66bf7242e31edab50916cb30e1e61a71107fc116c53",
+      "locked_f1": 0.6764645846091039,
+      "best_on_Cal": {
+        "strict_f1": 0.6774523858283842,
+        "tp_fp_fn": [
+          1654,
+          845,
+          730
+        ]
+      },
+      "possible_tie_positive_count": 0,
+      "optimistic_if_close_type_flips": 0.6774523858283842,
+      "headroom_pp": 0.09878012192803265
+    },
+    "B1": {
+      "ckpt_sha": "7d932908dfbcf4e792382d976ad2db573662731499b9052076ddef46825f8df1",
+      "cal_arrays_sha": "767ebab140bd5b8ec8df787320b94e1423cbcd119e3001220c94c811289233bb",
+      "locked_f1": 0.6668098818474758,
+      "best_on_Cal": {
+        "strict_f1": 0.6680878277552761,
+        "tp_fp_fn": [
+          1567,
+          740,
+          817
+        ]
+      },
+      "possible_tie_positive_count": 0,
+      "optimistic_if_close_type_flips": 0.6680878277552761,
+      "headroom_pp": 0.1277945907800282
+    }
+  }
+}

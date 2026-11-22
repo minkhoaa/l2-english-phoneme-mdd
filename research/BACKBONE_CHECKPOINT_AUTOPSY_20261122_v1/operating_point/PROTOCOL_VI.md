@@ -1,0 +1,3 @@
+# Có lợi ích bị lưới ngưỡng bỏ sót ở checkpoint đã lưu không?
+
+Chỉ `clean_11` Cal, trước khi tính kết quả. Với score target `p(S)+p(O)` và gap `p(I)` ở checkpoint, giữ nguyên argmax S/O và toàn bộ thứ tự score; tối đa **đúng** strict micro-F1 theo hai ngưỡng toàn cục độc lập. Không cắt đôi ties, loại `unknown` và native trước khi đếm. So với F1 đã khóa từng arm, với S0 tối đa tương tự, và gate `+0,5 pp`. Cho phép tất cả ngưỡng, kể cả vi phạm guard native: cận trên lạc quan cho mô hình/người Cal này, không phải ước lượng trên người mới. Không xuất ngưỡng thay thế, không đổi `policy`, không join Eval. Không rút kết luận về F1 tối ưu của những epoch không lưu logits.

@@ -1,0 +1,59 @@
+{
+  "milestone_id": "MAJOR_MILESTONE_20261122_CLEAN11_KOEL_ENS3_O5_O4",
+  "status": "RESEARCH_PILOT_READY_NOT_PRODUCTION_APPROVED",
+  "split": "clean_11",
+  "test_sealed_opened": false,
+  "bundle_path": "deploy/koel_ens3_mdd/bundle_s0_clean_ens3_o5_o4.pt",
+  "bundle_size_mib": 15.94,
+  "bundle_sha256": "44a978287b5d2e301688ee9a7f1cb9c222a93a2d371a607955ab8ff8b62042cf",
+  "architecture": "Frozen Base Koel (XLSR-53 CTC) + 3-Seed SingleFactorV2 (iso_no_hwin) Head Ensemble",
+  "policy_cal_locked": {
+    "ensemble_mode": "prob_mean",
+    "n_seeds": 3,
+    "tau_t": 0.35,
+    "tau_g": 0.38,
+    "rho_o": 0.5,
+    "gap_temp": 1.191252,
+    "gap_bias": -2.569823,
+    "cal_l2_strict_f1": 68.53,
+    "cal_l1_fa_per_1k": 0.39,
+    "max_l1_fa_per_1k_guard": 1.0
+  },
+  "diagnostic_eval_clean11": {
+    "held6_strict_f1": 66.24,
+    "held6_target_ap": 0.7753,
+    "held6_gap_ap": 0.5622,
+    "epadb_test_strict_f1": 69.02,
+    "epadb_test_target_ap": 0.8149,
+    "saa27_strict_f1": 43.92,
+    "saa27_target_ap": 0.4709,
+    "spontaneous_held6_strict_f1": 64.83,
+    "spontaneous_held6_gap_ap": 0.5401,
+    "timit_core_fa_per_utt": 0.562,
+    "timit_ctrl_recall_pct": 97.13
+  },
+  "raw_wav_parity": {
+    "n_utts": 15,
+    "target_exact": "491/491",
+    "gap_exact": "506/506",
+    "max_abs_diff": 1.02e-06
+  },
+  "latency_end_to_end_ms": {
+    "gtx1650_short_p50": 155.8,
+    "gtx1650_short_p95": 220.6,
+    "gtx1650_short_peak_vram_mib": 1646.0,
+    "gtx1650_stella_p50": 1477.6,
+    "cpu_short_p50": 1791.1
+  },
+  "closed_no_go_directions": [
+    "SYNTH_3DIR_ISO_V1_20261122 (S1/S2/S3 & S1-I)",
+    "BACKBONE_REP_CAMPAIGN_20261122_v1 (WavLM-Large/Base+/HuPER/Whisper frozen, DualRep A1/A3, FrameXAttn B1/B2, WavLM-Large LoRA C1/C2)",
+    "ORTHO_IMPROVEMENTS_20261122_v1 (O1_timit_freq, O2_logit_adj, O3-cal rho_o, O3_cond_so, F1_fit_patch 197 realized_id)",
+    "REAL_L2_SO762_20261122_v1 (SpeechOcean762 TRAIN strict_all/adult_only/soft_all)"
+  ],
+  "next_required_human_gates": [
+    "Blind listening adjudication on S_same (Fit/Cal) to lock product error definition",
+    "Independent Vietnamese short-sentence confirmation cohort (EXP-6) with human-adjudicated labels",
+    "Multi-pronunciation G2P layer before end-user text deployment"
+  ]
+}

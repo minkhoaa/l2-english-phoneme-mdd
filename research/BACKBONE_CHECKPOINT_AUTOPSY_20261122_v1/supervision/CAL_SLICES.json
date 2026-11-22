@@ -1,0 +1,401 @@
+{
+  "scope": "Descriptive Cal-only rank of each S among correct tokens of the same speaker and canonical phone.\n\nUse all eligible C as controls, weight each eligible S once, ties 1/2. 'blind' restricts BOTH the\npositive and controls. Reused controls / few speakers: not independent pairs or a test of causality.\nAlso partition the three-S0 common binary target misses; never use these strata as training labels.\n",
+  "run_binding": "ec082d3907f8c6b9d0b63d2f7d26e0f3aae39babc94230f369d038fb6257689c",
+  "reference_digest": "83451563085d1dfc71a7cd19d59886b301005e81f3339c32d316010a4161e0d6",
+  "code_sha": "301cd09dd39fe1f84e11f9d1c813a60fbefd4757166084f94a33317b7ffb28ed",
+  "cal_arrays_sha": {
+    "S0_20261121": "66ab95ccfb47b9da3b3651081133979046a716a904de2467b8df01aaeafce33b",
+    "S0_20261122": "b91e092d9f09fb1e34ea5ca86ef81c29321735817d3142d4e49131b9dc4803e1",
+    "S0_20261123": "d4f64285fb0156d5bdf8316f581f141264834bd587832f684d832ce091148cf4",
+    "A1": "5371c533da36bf904daeba0c5c6a9013b394ea24c40a40c31ae9a9eea6414e50",
+    "A3": "10ffdba72a89effb43c6f66bf7242e31edab50916cb30e1e61a71107fc116c53",
+    "B1": "767ebab140bd5b8ec8df787320b94e1423cbcd119e3001220c94c811289233bb",
+    "B2": "80e1f81b04fdc0960047147762aa880c543803a68cdd7c42c35c06ea259ed2c1"
+  },
+  "shared_misses": [
+    {
+      "source": "epadb_train",
+      "kind": "O",
+      "n": 10,
+      "blind": 6,
+      "rescued_by": {
+        "A1": 0,
+        "A3": 0,
+        "B1": 3,
+        "B2": 3
+      }
+    },
+    {
+      "source": "epadb_train",
+      "kind": "S",
+      "n": 106,
+      "blind": 79,
+      "rescued_by": {
+        "A1": 6,
+        "A3": 8,
+        "B1": 7,
+        "B2": 8
+      }
+    },
+    {
+      "source": "l2arctic_dev18",
+      "kind": "O",
+      "n": 44,
+      "blind": 27,
+      "rescued_by": {
+        "A1": 5,
+        "A3": 2,
+        "B1": 1,
+        "B2": 1
+      }
+    },
+    {
+      "source": "l2arctic_dev18",
+      "kind": "S_alt",
+      "n": 158,
+      "blind": 93,
+      "rescued_by": {
+        "A1": 18,
+        "A3": 12,
+        "B1": 5,
+        "B2": 9
+      }
+    },
+    {
+      "source": "l2arctic_dev18",
+      "kind": "S_same",
+      "n": 208,
+      "blind": 192,
+      "rescued_by": {
+        "A1": 13,
+        "A3": 9,
+        "B1": 4,
+        "B2": 2
+      }
+    }
+  ],
+  "conditional_positive_rank": {
+    "S0_20261121": {
+      "all": {
+        "S_same": {
+          "eligible": 270,
+          "positive_count": 270,
+          "mean_rank_fraction": 0.6193722886738351,
+          "by_speaker": {
+            "ERMS": 0.6411418172857265,
+            "SVBI": 0.5836065235071352,
+            "YBAA": 0.7283083746319041
+          }
+        },
+        "S_alt": {
+          "eligible": 796,
+          "positive_count": 796,
+          "mean_rank_fraction": 0.8408098877044481,
+          "by_speaker": {
+            "ERMS": 0.8567976602998413,
+            "SVBI": 0.8042233793784461,
+            "YBAA": 0.8638353174164807
+          }
+        }
+      },
+      "blind": {
+        "S_same": {
+          "eligible": 216,
+          "positive_count": 216,
+          "mean_rank_fraction": 0.6193730064676325,
+          "by_speaker": {
+            "ERMS": 0.681463610429509,
+            "SVBI": 0.5938899784033083,
+            "YBAA": 0.6859731245488366
+          }
+        },
+        "S_alt": {
+          "eligible": 97,
+          "positive_count": 97,
+          "mean_rank_fraction": 0.725023199556774,
+          "by_speaker": {
+            "ERMS": 0.7554184598620088,
+            "SVBI": 0.7052340814675434,
+            "YBAA": 0.7200202637111647
+          }
+        }
+      }
+    },
+    "S0_20261122": {
+      "all": {
+        "S_same": {
+          "eligible": 270,
+          "positive_count": 270,
+          "mean_rank_fraction": 0.6201794987112363,
+          "by_speaker": {
+            "ERMS": 0.664095753288469,
+            "SVBI": 0.5865228326760945,
+            "YBAA": 0.7113948143359908
+          }
+        },
+        "S_alt": {
+          "eligible": 796,
+          "positive_count": 796,
+          "mean_rank_fraction": 0.845726204205253,
+          "by_speaker": {
+            "ERMS": 0.8599056198346705,
+            "SVBI": 0.8156003046739375,
+            "YBAA": 0.8616411952135827
+          }
+        }
+      },
+      "blind": {
+        "S_same": {
+          "eligible": 216,
+          "positive_count": 216,
+          "mean_rank_fraction": 0.6132641732133299,
+          "by_speaker": {
+            "ERMS": 0.7016378478664193,
+            "SVBI": 0.588600520868775,
+            "YBAA": 0.6580842911877395
+          }
+        },
+        "S_alt": {
+          "eligible": 97,
+          "positive_count": 97,
+          "mean_rank_fraction": 0.7319740134025463,
+          "by_speaker": {
+            "ERMS": 0.7494501273333396,
+            "SVBI": 0.7131416406215156,
+            "YBAA": 0.7394804105645606
+          }
+        }
+      }
+    },
+    "S0_20261123": {
+      "all": {
+        "S_same": {
+          "eligible": 270,
+          "positive_count": 270,
+          "mean_rank_fraction": 0.6032136312949374,
+          "by_speaker": {
+            "ERMS": 0.6677006150046549,
+            "SVBI": 0.5618121332750589,
+            "YBAA": 0.7103731236084176
+          }
+        },
+        "S_alt": {
+          "eligible": 796,
+          "positive_count": 796,
+          "mean_rank_fraction": 0.8518289599589931,
+          "by_speaker": {
+            "ERMS": 0.8683325570334542,
+            "SVBI": 0.8207903394465992,
+            "YBAA": 0.8625423577895086
+          }
+        }
+      },
+      "blind": {
+        "S_same": {
+          "eligible": 216,
+          "positive_count": 216,
+          "mean_rank_fraction": 0.600811575221869,
+          "by_speaker": {
+            "ERMS": 0.7084609172701338,
+            "SVBI": 0.5720826632156724,
+            "YBAA": 0.6497490143816982
+          }
+        },
+        "S_alt": {
+          "eligible": 97,
+          "positive_count": 97,
+          "mean_rank_fraction": 0.726694345684337,
+          "by_speaker": {
+            "ERMS": 0.7510263383736305,
+            "SVBI": 0.7000631048316007,
+            "YBAA": 0.7377178675621198
+          }
+        }
+      }
+    },
+    "A1": {
+      "all": {
+        "S_same": {
+          "eligible": 270,
+          "positive_count": 270,
+          "mean_rank_fraction": 0.6094389842735066,
+          "by_speaker": {
+            "ERMS": 0.6206627933865193,
+            "SVBI": 0.5791303964975771,
+            "YBAA": 0.7052365390600686
+          }
+        },
+        "S_alt": {
+          "eligible": 796,
+          "positive_count": 796,
+          "mean_rank_fraction": 0.8427159476637376,
+          "by_speaker": {
+            "ERMS": 0.8657739296789533,
+            "SVBI": 0.7974911149338433,
+            "YBAA": 0.8612916770641544
+          }
+        }
+      },
+      "blind": {
+        "S_same": {
+          "eligible": 216,
+          "positive_count": 216,
+          "mean_rank_fraction": 0.601011256284829,
+          "by_speaker": {
+            "ERMS": 0.660819765794881,
+            "SVBI": 0.5819671208347912,
+            "YBAA": 0.6414731523127325
+          }
+        },
+        "S_alt": {
+          "eligible": 97,
+          "positive_count": 97,
+          "mean_rank_fraction": 0.7101287307746341,
+          "by_speaker": {
+            "ERMS": 0.721794166781441,
+            "SVBI": 0.6960807033152776,
+            "YBAA": 0.7171969447285875
+          }
+        }
+      }
+    },
+    "A3": {
+      "all": {
+        "S_same": {
+          "eligible": 270,
+          "positive_count": 270,
+          "mean_rank_fraction": 0.6166126436920778,
+          "by_speaker": {
+            "ERMS": 0.5702649001833192,
+            "SVBI": 0.5910598813279053,
+            "YBAA": 0.724286851492734
+          }
+        },
+        "S_alt": {
+          "eligible": 796,
+          "positive_count": 796,
+          "mean_rank_fraction": 0.8413269446512261,
+          "by_speaker": {
+            "ERMS": 0.8611897465658783,
+            "SVBI": 0.801173800633896,
+            "YBAA": 0.8596476243140302
+          }
+        }
+      },
+      "blind": {
+        "S_same": {
+          "eligible": 216,
+          "positive_count": 216,
+          "mean_rank_fraction": 0.6144400385931631,
+          "by_speaker": {
+            "ERMS": 0.6025774612484291,
+            "SVBI": 0.6013495130551818,
+            "YBAA": 0.6790399244822033
+          }
+        },
+        "S_alt": {
+          "eligible": 97,
+          "positive_count": 97,
+          "mean_rank_fraction": 0.7203069582756698,
+          "by_speaker": {
+            "ERMS": 0.7538197766480988,
+            "SVBI": 0.6843781153096903,
+            "YBAA": 0.7344441127221103
+          }
+        }
+      }
+    },
+    "B1": {
+      "all": {
+        "S_same": {
+          "eligible": 270,
+          "positive_count": 270,
+          "mean_rank_fraction": 0.6215838945322021,
+          "by_speaker": {
+            "ERMS": 0.6801187950717883,
+            "SVBI": 0.5899522576368466,
+            "YBAA": 0.6989887835476072
+          }
+        },
+        "S_alt": {
+          "eligible": 796,
+          "positive_count": 796,
+          "mean_rank_fraction": 0.8372154336565509,
+          "by_speaker": {
+            "ERMS": 0.8579541971151202,
+            "SVBI": 0.7965770345693043,
+            "YBAA": 0.8538497683755012
+          }
+        }
+      },
+      "blind": {
+        "S_same": {
+          "eligible": 216,
+          "positive_count": 216,
+          "mean_rank_fraction": 0.6172275995711642,
+          "by_speaker": {
+            "ERMS": 0.722123693817703,
+            "SVBI": 0.5963681591237275,
+            "YBAA": 0.6341945693819757
+          }
+        },
+        "S_alt": {
+          "eligible": 97,
+          "positive_count": 97,
+          "mean_rank_fraction": 0.7231036749420654,
+          "by_speaker": {
+            "ERMS": 0.7140028600176048,
+            "SVBI": 0.7066622599678496,
+            "YBAA": 0.7557550903609307
+          }
+        }
+      }
+    },
+    "B2": {
+      "all": {
+        "S_same": {
+          "eligible": 270,
+          "positive_count": 270,
+          "mean_rank_fraction": 0.6205916293169835,
+          "by_speaker": {
+            "ERMS": 0.6758131933468202,
+            "SVBI": 0.5825423790826247,
+            "YBAA": 0.7210242644066174
+          }
+        },
+        "S_alt": {
+          "eligible": 796,
+          "positive_count": 796,
+          "mean_rank_fraction": 0.8398825114139994,
+          "by_speaker": {
+            "ERMS": 0.8567954379309694,
+            "SVBI": 0.805843575452879,
+            "YBAA": 0.8551894285040694
+          }
+        }
+      },
+      "blind": {
+        "S_same": {
+          "eligible": 216,
+          "positive_count": 216,
+          "mean_rank_fraction": 0.6144416196183735,
+          "by_speaker": {
+            "ERMS": 0.7286053105113013,
+            "SVBI": 0.5852834176674472,
+            "YBAA": 0.6607035371203289
+          }
+        },
+        "S_alt": {
+          "eligible": 97,
+          "positive_count": 97,
+          "mean_rank_fraction": 0.7415452912267964,
+          "by_speaker": {
+            "ERMS": 0.7479893395049666,
+            "SVBI": 0.7616807468964025,
+            "YBAA": 0.7065951405318052
+          }
+        }
+      }
+    }
+  }
+}

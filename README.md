@@ -1,4 +1,4 @@
-# Pronunciation-Dataset-220K — Nghiên Cứu & Engine Chẩn Đoán Lỗi Phát Âm Tiếng Anh L2 (MDD)
+# L2-English-Phoneme-MDD — Nghiên Cứu & Engine Chẩn Đoán Lỗi Phát Âm Tiếng Anh L2 (S/O/I)
 
 Dự án nghiên cứu độc lập xây dựng hệ thống **Phát hiện & Chẩn đoán Lỗi Âm vị Tiếng Anh L2 (Mispronunciation Detection and Diagnosis — MDD)** trên đầy đủ 3 loại lỗi **Substitution (S), Omission (O), Insertion (I)** theo chuẩn topo Exact-Gap ($N$ target slots / $N+1$ gap slots), cùng lộ trình dài hạn xây dựng bộ dữ liệu chuẩn quy mô lớn (220.000 câu / 2.200 người nói).
 
@@ -95,7 +95,7 @@ Chi tiết schema đầu ra, giới hạn và lệnh tái kiểm parity: [`deplo
 ## 4. Cấu Trúc Thư Mục Chính Được Lưu Giữ Trong Repo
 
 ```text
-Pronunciation-Dataset-220K/
+l2-english-phoneme-mdd/
 ├── README.md                                        # Tổng quan & bảng benchmark xác minh
 ├── GOAL.md                                          # Đặc tả lộ trình & ranh giới ủy quyền
 ├── deploy/koel_ens3_mdd/                            # Engine suy luận đóng gói (15,94 MiB bundle + API + parity/latency)

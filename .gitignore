@@ -1,9 +1,10 @@
 # Data directories
 data/raw/
 data/interim/
-data/processed/*.wav
-data/processed/*.flac
-data/processed/*.mp3
+data/processed/
+# Superseded manifest-only oscillator output; not usable speech training data.
+data/manifests/train_synthetic_140k.jsonl
+data/manifests/train_synthetic_pilot_10k.jsonl
 
 # Python & Environment
 __pycache__/
@@ -24,3 +25,15 @@ ENV/
 # Large checkpoints / artifacts
 checkpoints/
 logs/
+
+# Pilot caches and model binaries; keep small configs/reports/metrics reviewable.
+experiments/**/*.pt
+experiments/**/*.npz
+experiments/**/features/
+experiments/**/frozen_models/
+experiments/**/rater_*/audio/
+experiments/**/rater_*/controls/
+experiments/**/code_snapshot/
+# Native phone logits and per-audio evidence stay local; retain run summaries/receipts.
+experiments/phone-reviewers-*/rater_*/audio/
+experiments/phone-reviewers-*/rater_*/controls/

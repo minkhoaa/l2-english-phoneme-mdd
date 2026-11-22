@@ -1,0 +1,48 @@
+{
+  "branches": {
+    "S1": {
+      "technical_pass": false,
+      "checks": {
+        "candidate_identity": true,
+        "baseline_custody": false,
+        "pilot_size": true,
+        "acoustic_realism": false
+      },
+      "utterances": 1500,
+      "manifest_sha256": "a23123837ba40da38206cc2c3e3a9cf2f8ad0654768a4d73c13e1cb637d7be82",
+      "build_receipt_sha256": "898defdecbf0df6c65732d059d8c129395b9d11a8a8f36a9a1e4a44fe3f976b7"
+    },
+    "S2": {
+      "technical_pass": false,
+      "checks": {
+        "candidate_identity": true,
+        "baseline_custody": false,
+        "pilot_size": false,
+        "acoustic_realism": false,
+        "sham": true
+      },
+      "utterances": 372,
+      "manifest_sha256": "8d0d4aeaeef5900c8ebf1eebc586731d1bcb21e104e9a817764692d790e95627",
+      "build_receipt_sha256": "b8738477fb1e0a0545895cbbd8b05a06a61ba92343f21a29e42c9c9989f30fa7"
+    },
+    "S3": {
+      "technical_pass": false,
+      "checks": {
+        "candidate_identity": true,
+        "baseline_custody": false,
+        "pilot_size": false,
+        "acoustic_realism": false,
+        "fit_consensus_precision": false
+      },
+      "utterances": 34,
+      "manifest_sha256": "56ee8787f019fe54c2b06d393acd7395daeb878b8330b0b1be6c0a1000ddf6d7",
+      "build_receipt_sha256": "c82599dbac9c06132e8f90022f79c52d0aeb9a689f722b8cb0d3434e63ccf68d"
+    }
+  },
+  "repair_preflight_sha256": "0b7d40c521f02bd5700cccea9d44b5e756018f2c74a85a98d832aa0bfb24335a",
+  "protocol_sha256": "bb077018d3a6d2427041ba65279fa3e1e835956cb0191d598298747a95ca34c8",
+  "baseline_custody_audit_sha256": "75c82310b3ba5aa964122e635d336a0bc91b60fdb4b0a1a030740da043693fa1",
+  "acoustic_report_sha256": "d4365eaa87ff700df5597716bdfb5153fda7ff4ce057e98af219e618bac5e20b",
+  "leakage_report_sha256": "bcfa949cf5fbfd0a62864e71a552e9773b2c612b4ef7247c603dd2210b200a82",
+  "training_executed": false
+}

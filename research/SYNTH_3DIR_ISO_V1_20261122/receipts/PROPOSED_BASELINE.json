@@ -1,0 +1,72 @@
+{
+  "status": "PROPOSED_CUSTODY_CLEAN_INPUTS_NOT_A_BASELINE_CHECKPOINT",
+  "parent_preflight_sha256": "0b7d40c521f02bd5700cccea9d44b5e756018f2c74a85a98d832aa0bfb24335a",
+  "custody_spec_sha256": "ee72e03365ce62e5b4466621891aee0225b180583a48556397d5a28be28e1270",
+  "manifest_sha256": {
+    "fit.jsonl": "ac4c0d02eb3757a3b94c24ca79a3030c26577e9091599333157de9be50515fb6",
+    "cal.jsonl": "c723496f6c9c2ad655260eb0a05908db146f7ccdcfa8009302148b0895435497",
+    "eval_prompts.jsonl": "5247e22e17e6243eb34dcd6bc8db944683c4e5f4ad81097a61992a48d672c65c"
+  },
+  "builder_sha256": "04817a25d7b15d719968e71e30313848690d2ffa2b5e1652279acd4262a8da42",
+  "inherited_overlap": {
+    "passed": false,
+    "speaker_overlap": {
+      "fit.jsonl": {
+        "rows": 330,
+        "by_speaker": {
+          "ZHAA": 90,
+          "TNI": 64,
+          "MBMPS": 88,
+          "TLV": 88
+        },
+        "by_source": {
+          "l2arctic_dev18": 330
+        }
+      },
+      "cal.jsonl": {
+        "rows": 0,
+        "by_speaker": {},
+        "by_source": {}
+      },
+      "eval_prompts.jsonl": {
+        "rows": 20,
+        "by_speaker": {
+          "MBMPS": 5,
+          "TLV": 5,
+          "TNI": 6,
+          "ZHAA": 4
+        },
+        "by_source": {
+          "spontaneous": 20
+        }
+      }
+    },
+    "custody_spec_sha256": "ee72e03365ce62e5b4466621891aee0225b180583a48556397d5a28be28e1270",
+    "test_sealed_opened": false,
+    "scope": "Speaker identity only; sealed UID/audio were not inspected"
+  },
+  "n_fit_l2": 2681,
+  "rows": {
+    "fit.jsonl": 3681,
+    "cal.jsonl": 635,
+    "eval_prompts.jsonl": 2446
+  },
+  "fit_sources": {
+    "l2arctic_dev18": 1042,
+    "epadb_train": 1639,
+    "timit_train_l1_antishortcut": 1000
+  },
+  "eval_prompt_cohorts": {
+    "held6": 802,
+    "spontaneous": 109,
+    "epadb_test": 1266,
+    "saa27": 27,
+    "timit_core": 192,
+    "timit_core_corrupt_ctrl": 50
+  },
+  "scope": "No protected speaker in any proposed row; no assertion about upstream model exposure",
+  "eval_gold_materialized": false,
+  "test_sealed_opened": false,
+  "trained": false,
+  "parent_eval_gold_sha256_for_future_join": "f496efbb7736a6ed3bbd4f6918cd18cf205505a01f9717f04ed7c121e53ed22a"
+}

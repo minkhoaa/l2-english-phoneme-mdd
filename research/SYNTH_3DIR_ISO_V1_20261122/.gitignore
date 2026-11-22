@@ -1,0 +1,5 @@
+*
+!.gitignore
+!PROTOCOL_VI.md
+!receipts/
+!receipts/**

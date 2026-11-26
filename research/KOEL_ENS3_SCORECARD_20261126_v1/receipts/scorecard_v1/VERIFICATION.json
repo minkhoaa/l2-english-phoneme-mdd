@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "source_slots_verified": 235103,
+  "utterance_cohort_pairs": 3893,
+  "independent_confusion_and_strict_binary_recount": true,
+  "flow1_cal_slot_calls_exact": 211,
+  "model_only_gaps_excluded": 2,
+  "results_sha256": "50ad81edf3544fe2eaeee89a8347e74f0618309960fc546a26f9a35d9a10e5d9"
+}

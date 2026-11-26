@@ -1,5 +1,13 @@
 # Experiment history
 
+## 2026-11-27 — Đối soát hồ sơ checkpoint ENS3 (không chạy thí nghiệm model mới)
+
+- **Objective:** Ghi lại lineage, policy đã đóng gói, kết quả có đối chứng, phản hồi Flow 1 và điều kiện dùng cho RQ1.
+- **Setup:** `e5ad649` + hồ sơ cục bộ; so SHA-256 và đọc metadata `.pt` trên CPU (`torch.load(..., weights_only=True)`), đối chiếu [ensemble card](ORTHO_IMPROVEMENTS_20261122_v1/receipts/ENSEMBLE_CARD.json) và các biên nhận tổng hợp. Không chạy lại tập WAV hoặc mở `test_sealed`.
+- **Results:** SHA bundle `44a97828…`, đúng ba seed và ngưỡng khóa. O4 trong bundle là `T=1,190983`, `b=−2,569552`; sửa hai số ghi lệch trong [card mô tả](../deploy/koel_ens3_mdd/BUNDLE_CARD.json), không đổi `.pt`, policy thực chạy hay kết quả. [Hồ sơ milestone](KOEL_ENS3_SCORECARD_20261126_v1/MILESTONE_VI.md) liên kết bằng chứng đóng gói, đối chứng, benchmark và replay; 21 kiểm thử liên quan đạt trong workspace nghiên cứu.
+- **Conclusion:** Đủ bằng chứng chọn ENS3 làm baseline nghiên cứu/demo, không xác nhận hiệu quả sư phạm hoặc đủ điều kiện phát hành.
+- **Next Steps:** Feedback v2 và pilot `EXP-6` có nhãn độc lập; mọi thử nghiệm mới dùng ENS3 làm đối chứng và không tune trên Eval lịch sử.
+
 ## 2026-11-22 — Thí nghiệm dữ liệu L2 thật `SpeechOcean762 TRAIN` (`NO_GO`) & Đóng gói Engine suy luận `deploy/koel_ens3_mdd/` (`DEPLOY_BUNDLE_VERIFIED`)
 
 - **Objective:** (1) Dọn `31,5 GiB` cache tạm `NO_GO` của `full_clean11_v1`; (2) kiểm chứng tự động liệu bổ sung **`+125` người L2 thật có nhãn 5 chuyên gia (`mispeech/speechocean762` TRAIN, `2.500` câu, `47.076` âm)** bằng loss biên nhị phân sạch `BCE(P(S)+P(O), q_err)` (không ép `S/O` trên slot mơ hồ) có phá được trần `37` người Fit cũ không; (3) đóng gói mốc thắng vào engine suy luận đầu-cuối WAV→quyết định và kiểm chứng parity + độ trễ thực tế.

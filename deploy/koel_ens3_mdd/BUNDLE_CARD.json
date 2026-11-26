@@ -13,8 +13,8 @@
     "tau_t": 0.35,
     "tau_g": 0.38,
     "rho_o": 0.5,
-    "gap_temp": 1.191252,
-    "gap_bias": -2.569823,
+    "gap_temp": 1.190983,
+    "gap_bias": -2.569552,
     "cal_l2_strict_f1": 68.53,
     "cal_l1_fa_per_1k": 0.39,
     "max_l1_fa_per_1k_guard": 1.0

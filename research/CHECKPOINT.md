@@ -1,5 +1,7 @@
 # Research checkpoint / handoff
 
+**2026-11-27 — [Checkpoint nghiên cứu ENS3 — RQ1](KOEL_ENS3_SCORECARD_20261126_v1/MILESTONE_VI.md), mốc chính của dự án đến nay.** `S0_clean_ens3_o5_o4` khóa cho khóa luận và demo có giám sát: từ Koel đóng băng đến ba head, O5+O4, đối chứng và replay `139.996/139.996` quyết định. Hồ sơ ghi cả các nhánh `NO_GO`, Flow 1 và giới hạn xác nhận; không gộp các cohort, không mở `test_sealed`. Tiếp theo: feedback v2 và người chấm độc lập cho pilot `EXP-6`; không train hoặc chỉnh ngưỡng theo Eval lịch sử.
+
 **2026-11-26 — [Mốc bàn giao Train vs. ngoài Train](KOEL_ENS3_SCORECARD_20261126_v1/TRAIN_VS_OUTSIDE_VI.md).** Bundle `S0_clean_ens3_o5_o4` SHA-256 `44a978287b5d2e301688ee9a7f1cb9c222a93a2d371a607955ab8ff8b62042cf`, ngưỡng giữ `0,35 / 0,50 / 0,38` (target / phân loại O / gap). Khoá báo cáo theo từng tập; Train/Cal/người nói giữ riêng và đối chứng TIMIT không gộp. Không đổi trọng số, không mở `test_sealed`. Kết quả và số đếm tổng hợp ở `receipts/`; WAV, nhãn chi tiết và dự đoán từng vị trí giữ cục bộ. Bước kế tiếp: dùng mốc này để đối chiếu, không chỉnh ngưỡng theo Eval đã xem; chưa kết luận trên người Việt mới trước `EXP-6`.
 
 **Mốc lớn `MAJOR_MILESTONE_20261122_CLEAN11_KOEL_ENS3_O5_O4` (sẵn sàng commit & chạy pilot WAV thật, chưa duyệt production đại trà).**

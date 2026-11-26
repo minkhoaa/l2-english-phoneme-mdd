@@ -1,5 +1,9 @@
 # Research decisions
 
+## 2026-11-27 — Khóa ENS3 làm baseline phát âm (RQ1), không duyệt phát hành
+
+Dùng [hồ sơ milestone](KOEL_ENS3_SCORECARD_20261126_v1/MILESTONE_VI.md) làm nguồn cho kiến trúc, kết quả, giới hạn và bàn giao. Giữ bundle/ngưỡng, tách chẩn đoán khỏi thẩm định lời sửa, giữ `test_sealed` đóng. Không tiếp tục sweep trên các tập đã xem; chỉ mở lại khi có lỗi cụ thể từ dữ liệu mới và đối chứng ở cùng ngân sách báo oan. Git lưu thông tin tổng hợp, không đưa audio, nhãn chi tiết hay dự đoán từng vị trí vào commit.
+
 ## 2026-11-22 — Đóng nhánh `SpeechOcean762 TRAIN` (`NO_GO`); khóa `deploy/koel_ens3_mdd/bundle_s0_clean_ens3_o5_o4.pt` làm engine suy luận nghiên cứu chuẩn trên `clean_11`
 
 - **Loại bỏ `SpeechOcean762 TRAIN` (`REAL_L2_SO762_20261122_v1`):** Cả 3 biến thể (`strict_all`, `adult_only`, `soft_all`) trên 3 seed ghép cặp đều giảm Held-6 (`-0,24..-0,40 pp`), tụt nặng `SAA-27` (`-2,27..-7,43 pp`) và `Spont H6` (`-1,07..-2,66 pp`, `0/3` seed) dù nhích nhẹ `tAP` đọc ngắn; nguyên nhân là lệch tỷ lệ `C` (`80%`) và độ dài câu đọc ngắn 1 L1 tiếng Trung.

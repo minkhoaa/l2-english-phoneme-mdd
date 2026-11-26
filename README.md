@@ -2,8 +2,8 @@
 
 Dự án nghiên cứu độc lập xây dựng hệ thống **Phát hiện & Chẩn đoán Lỗi Âm vị Tiếng Anh L2 (Mispronunciation Detection and Diagnosis — MDD)** trên đầy đủ 3 loại lỗi **Substitution (S), Omission (O), Insertion (I)** theo chuẩn topo Exact-Gap ($N$ target slots / $N+1$ gap slots), cùng lộ trình dài hạn xây dựng bộ dữ liệu chuẩn quy mô lớn (220.000 câu / 2.200 người nói).
 
-> **Trạng thái hiện tại (22/11/2026 — Mốc lớn `MAJOR_MILESTONE_20261122_CLEAN11_KOEL_ENS3_O5_O4`):**
-> - **Đã hoàn thiện & đóng gói Engine suy luận nghiên cứu / pilot mạnh nhất** trên dữ liệu công khai hiện có: [`deploy/koel_ens3_mdd/`](deploy/koel_ens3_mdd/README.md) (`15,94 MiB`, đối khớp `997/997` slot từ `.wav` thô, độ trễ đầu-cuối `155,8 ms` trên GTX 1650).
+> **Trạng thái (27/11/2026): [Checkpoint nghiên cứu ENS3 — RQ1](research/KOEL_ENS3_SCORECARD_20261126_v1/MILESTONE_VI.md)** (`MAJOR_MILESTONE_20261122_CLEAN11_KOEL_ENS3_O5_O4`).
+> - **Đã khóa baseline nghiên cứu/pilot:** [Engine Koel ENS3](deploy/koel_ens3_mdd/README.md) (`15,94 MiB` cho ba head, dùng chung một backbone Koel). WAV replay khớp `139.996/139.996` quyết định archive. Độ trễ model P50 `155,8 ms` trên câu ngắn thử với GTX 1650.
 > - **Chưa phê duyệt triển khai production đại trà cho người học Việt Nam:** các tập điểm bên dưới là benchmark chẩn đoán lịch sử (chủ yếu L2-ARCTIC & EpaDB Tây Ban Nha); cần qua xác nhận độc lập trên câu ngắn người Việt (`EXP-6`) và lớp G2P đa biến thể phát âm chuẩn trước khi phát hành đại trà.
 > - **Các con số 220.000 câu / 2.200 người nói** ở phần lộ trình bên dưới là mục tiêu quy hoạch dài hạn (`PLAN_ONLY`), không phải dữ liệu đã thu xong. Toàn bộ dữ liệu niêm phong bảo vệ (`test_sealed.jsonl`) giữ nguyên chưa mở.
 
@@ -29,9 +29,9 @@ Mọi mô hình dưới đây được chấm theo **Strict micro-F1 (S/O/I)** (
 
 *\*`R0` `61,55%` tính trên full Spontaneous; các dòng sau tách riêng lát unseen Held-6 (`24` câu). Nguồn: [`FULL_BENCHMARK_AND_DISSECTION.json`](research/FULL_3MODEL_BENCHMARK_AND_DEEP_DIAGNOSIS_20261121_v1/outputs/FULL_BENCHMARK_AND_DISSECTION.json), [`SEQ_MDD_V2_ANTISHORTCUT_RESULTS.json`](research/MDD_FIXES_AND_V2_20261121_v1/outputs_seq_mdd_v2/SEQ_MDD_V2_ANTISHORTCUT_RESULTS.json), [`CONFIRM_3SEED_RESULTS.json`](research/SEQ_MDD_V3_CAMPAIGN_20261121_v1/runs/confirm_fix1_3seed_20261121_v1/CONFIRM_3SEED_RESULTS.json).*
 
-### 1.2. Bảng chuẩn tách sạch tuyệt đối `test_sealed` (`clean_11`: 11 người L2A Fit + 26 EpaDB + 334 TIMIT) & Mốc Đóng Gói Chính
+### 1.2. Bảng `clean_11` cho head & mốc đóng gói
 
-Sau khi kiểm toán phát hiện split 15 người cũ trùng 4 người nói với danh sách công khai `test_sealed` của repo trước (`ZHAA, TNI, MBMPS, TLV`), toàn bộ vòng đánh giá chuẩn cuối cùng được khóa trên split sạch **`clean_11`** (`3.681 Fit / 635 Cal / 2.446 prompt Eval`, `0%` trùng người nói với `test_sealed`):
+Kiểm toán phát hiện split 15 người cũ trùng 4 người nói với roster `test_sealed`. Vòng đánh giá cuối dùng **`clean_11`** (`3.681 Fit / 635 Cal / 2.446 lượt WAV/prompt Eval`), loại bốn người khỏi vòng sạch và giữ holdout đóng. Tách người nói của head không chứng minh backbone chưa gặp dữ liệu trong tiền huấn luyện.
 
 | Hệ thống trên `clean_11` | Held-6 F1 (`tAP / gAP`) | EpaDB TEST F1 (`tAP`) | Spont H6 F1 (`gAP`) | SAA-27 F1 (`tAP`) | TIMIT Core (FA/câu) | Ctrl Recall |
 |---|---:|---:|---:|---:|---:|---:|
@@ -63,13 +63,13 @@ Thay vì giữ lại mã thử nghiệm dư thừa, mọi hướng thử nghiệ
 | **Cải tiến trực giao (`O1/O2/O3-cal/O3_cond_so`)** | `O1` TIMIT freq-matched, `O2` Logit Adjustment `(src, phone)`, `O3-cal` `rho_o`, `O3_cond_so` (`λ=0,25/0,5`) | `O1` TIMIT tăng 2×; `O2` tụt tới `-5,45 pp`; `O3-cal` overfit Cal; `O3_cond_so` tăng EpaDB `+0,34 pp` nhưng tụt Spont & tăng TIMIT (`ens3` thua `F0`) | **`NO_GO`** *(chỉ giữ `O5+O4`)* — [receipts](research/ORTHO_IMPROVEMENTS_20261122_v1/receipts/CPU_ABLATION_RESULTS.json) |
 | **Mở rộng dữ liệu L2 thật `SpeechOcean762 TRAIN`** | `+125` người L2 thật (`2.500` câu, `47.076` âm, 5 chuyên gia), exact marginal/soft binary CE (`strict_all`, `adult_only`, `soft_all`, 3 seed) | Nhích nhẹ `tAP` đọc ngắn (`+0,003`), nhưng giảm Held-6 (`-0,24..-0,40 pp`), tụt nặng `SAA-27` (`-2,27..-7,43 pp`) & Spont H6 (`-1,07..-2,66 pp`) do lệch miền `80%` `C` trên câu ngắn | **`NO_GO`** — [receipts](research/REAL_L2_SO762_20261122_v1/receipts/SO762_3SEED_RESULTS.json) |
 
-**Bài học cốt lõi đã chứng minh định lượng:** Trần `~66–69%` hiện tại không còn nằm ở kiến trúc head hay thiếu tham số backbone, mà ở **(1)** độ phủ người nói L2 Fit hẹp (`37` người), và **(2)** tỷ lệ lớn lỗi `S_same` (nhãn ghi `S` dù mã âm realized trùng canonical — chiếm `25,3%` lỗi `S` trên L2-ARCTIC Cal vs `2,24%` Fit; `75,5%` lỗi cả 3 seed bỏ sót nằm trong lát Koel tự tin `can_lp > -0,2`).
+**Giới hạn đã quan sát:** Fit có `37` người nói L2; trong phân tích S0, `S_same` (nhãn ghi `S` dù mã âm thực phát trùng âm chuẩn) chiếm `25,3%` lỗi `S` trên L2-ARCTIC Cal so với `2,24%` Fit. `75,5%` lỗi đích cả ba seed cùng bỏ sót thuộc lát Koel tự tin `can_lp > -0,2`. Đây là dấu hiệu cần kiểm chứng trên dữ liệu mới, không phải bằng chứng về trần kiến trúc hoặc lý do để đổi nhãn.
 
 ---
 
 ## 3. Chạy Thử Engine Suy Luận (`deploy/koel_ens3_mdd/`)
 
-Yêu cầu: Python 3.11 + PyTorch + Base Koel cục bộ (offline, 0 upload dữ liệu ra ngoài).
+Yêu cầu: workspace nghiên cứu có các mô-đun phụ trợ, Python 3.11, PyTorch và Base Koel cục bộ (offline, không upload audio). Checkout Git riêng chưa đủ để chạy lại toàn bộ pipeline.
 
 ```bash
 HF_HUB_OFFLINE=1 .venv/bin/python -m deploy.koel_ens3_mdd.engine \
